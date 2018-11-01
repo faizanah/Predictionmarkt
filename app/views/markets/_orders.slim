@@ -1,0 +1,31 @@
+.card-block
+  - if orders.empty?
+    .pmkt-table-missing
+      p = empty_message
+  - else
+    = pmkt_table
+      thead.pmkt-md-up-block
+        tr
+          th.w-100
+          th.col-2 Price
+          th.col-2 Volume
+          th.col-2 Shares
+          th.col-md-2.col-sm-6
+      tbody
+        - orders.each do |order|
+          tr
+            td.w-100
+              = trading_operation_badge(order, classes: 'mr-2')
+              // TODO: test
+              = link_to order.market_outcome.format_short_title, my_trading_order_path(order)
+
+            td.col-2.pmkt-md-up-flex= format_odds(order.odds)
+            td.col-2.pmkt-md-up-flex= format_money(order.requested_amount, currency: order.currency, usd_rounding: 0.1)
+
+            td.col-2.pmkt-md-up-flex= trading_order_progress(order, shares_only: true)
+            td.pmkt-table__action-cell
+              - if order.active?
+                = cancel_trading_order_button(order)
+              - else
+                = trading_order_state(order, disabled: true)
+

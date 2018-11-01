@@ -1,0 +1,62 @@
+@import "@material/button/mdc-button"
+@import "@material/card/mdc-card"
+//@import "@material/dialog/mdc-dialog"
+@import "@material/drawer/mdc-drawer"
+//@import "@material/fab/mdc-fab"
+//@import "@material/fonts/roboto"
+//@import "@material/grid-list/mdc-grid-list"
+//@import "@material/layout-grid/mdc-layout-grid"
+//@import "@material/snackbar/mdc-snackbar"
+@import "@material/toolbar/mdc-toolbar"
+@import "@material/chips/mdc-chips"
+
+// material_icons gem generates broken divs
+//@import "@material/fonts/material-icons"
+
+@import "@material/theme/mdc-theme"
+@import "@material/typography/mdc-typography"
+@import "@material/checkbox/mdc-checkbox"
+@import "@material/elevation/mdc-elevation"
+@import "@material/form-field/mdc-form-field"
+@import "@material/icon-toggle/mdc-icon-toggle"
+@import "@material/linear-progress/mdc-linear-progress"
+@import "@material/list/mdc-list"
+@import "@material/menu/mdc-menu"
+@import "@material/radio/mdc-radio"
+@import "@material/select/mdc-select"
+@import "@material/slider/mdc-slider"
+@import "@material/switch/mdc-switch"
+@import "@material/tabs/mdc-tabs"
+@import "@material/textfield/mdc-text-field"
+@import "@material/ripple/mdc-ripple"
+@import "@material/floating-label/mdc-floating-label"
+
+// bootstrap reboot vs mdc conflict
+
+label
+  margin: 0
+
+.mdc-select, .mdc-select__surface
+  box-sizing: content-box
+
+.mdc-list-item
+  a:hover
+    text-decoration: none
+
+.mdc-text-field__input
+  &:-webkit-autofill + .mdc-floating-label
+    transform: translateY(-50%) scale(.75, .75)
+    cursor: auto
+
+// properly clickable links everywhere
+.mdc-list-item
+  a
+    @extend .w-100
+
+// mobile viewport workaround
+
+// https://github.com/material-components/material-components-web/blob/master/packages/mdc-tabs/tab/mdc-tab.scss#L62
+@include media-breakpoint-down(md)
+  .mdc-tab
+     min-width: 72px
+     padding: 0 12p

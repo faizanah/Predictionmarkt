@@ -1,0 +1,20 @@
+production: &default
+  templates:
+    'yes':
+      title: 'Yes'
+      ticker_base: 'YES'
+    'no':
+      title: 'No'
+      ticker_base: 'NO'
+    'fallback':
+      title: 'Other'
+      ticker_base: 'OTHER'
+
+  allowed_outcomes:
+    'binary': ['yes', 'no']
+    'categorical': ['category', 'fallback']
+
+development: *default
+test:
+  <<: *default
+

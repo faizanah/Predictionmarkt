@@ -1,0 +1,134 @@
+production: &default
+  application_currency:
+    btc:
+      enabled: false
+      class: 'BitcoinCurrency'
+      input_limit: 5
+      external:
+        address: 'https://blockchain.info/address/%{address}'
+    eth:
+      enabled: true
+      default: true
+      withdrawable: true
+      class: 'EthereumCurrency'
+      input_limit: 1
+      external:
+        address: 'https://etherscan.io/address/%{address}'
+    pmt:
+      enabled: true
+      class: 'PredictionmarktCurrency'
+
+  currencies:
+    - priority: 1
+      iso_code: "btc"
+      name: "Bitcoin"
+      symbol: "BTC"
+      symbol_first: false
+      subunit: "Satoshi"
+      subunit_to_unit: 100_000_000
+      thousands_separator: ","
+      decimal_mark: "."
+
+    - priority: 2
+      iso_code: "mbtc"
+      name: "MBTC with subunit of 8 digits"
+      symbol: "MBTC"
+      symbol_first: false
+      subunit: "Satoshi"
+      subunit_to_unit: 100_000
+      thousands_separator: ","
+      decimal_mark: "."
+
+    - priority: 2
+      iso_code: "ubtc"
+      name: "UBTC with subunit of 8 digits"
+      symbol: "UBTC"
+      symbol_first: false
+      subunit: "Satoshi"
+      subunit_to_unit: 100
+      thousands_separator: ","
+      decimal_mark: "."
+
+    - priority: 1
+      iso_code: "eth"
+      name: "Ethereum"
+      symbol: "ETH"
+      symbol_first: false
+      subunit: "wei"
+      subunit_to_unit: 1_000_000_000_000_000_000
+      thousands_separator: ","
+      decimal_mark: "."
+
+    - priority: 2
+      iso_code: "gwei"
+      name: "GWEI: 1e9 wei"
+      symbol: "GWEI"
+      symbol_first: false
+      subunit: "wei"
+      subunit_to_unit: 1_000_000_000
+      thousands_separator: ","
+      decimal_mark: "."
+
+    - priority: 2
+      iso_code: "szabo"
+      name: "GWEI: 1e12 wei (micro ETH)"
+      symbol: "SZABO"
+      symbol_first: false
+      subunit: "wei"
+      subunit_to_unit: 1_000_000_000_000
+      thousands_separator: ","
+      decimal_mark: "."
+
+    - priority: 2
+      iso_code: "finney"
+      name: "GWEI: 1e15 wei (milli ETH)"
+      symbol: "FINNEY"
+      symbol_first: false
+      subunit: "wei"
+      subunit_to_unit: 1_000_000_000_000_000
+      thousands_separator: ","
+      decimal_mark: "."
+
+    - priority: 1
+      iso_code: "pmt"
+      name: "PredictionToken"
+      symbol: "PMT"
+      symbol_first: false
+      subunit: "cent"
+      subunit_to_unit: 1
+      thousands_separator: ","
+      decimal_mark: "."
+
+  rates:
+    BTC:
+      MBTC: 1000
+      UBTC: 1_000_000
+    MBTC:
+      UBTC: 1000
+    ETH:
+      GWEI: 1_000_000_000
+    USD:
+      PMT: 100
+
+  real_full_wallets:
+    creds:
+      btc:
+        address: '1GSgqasn35TMEGpAEahqhtxXV5tWTNcmn9'
+        encrypted_private_key: 'QEVuQwEATZmR6LmR+LVIB7rRQJHeSe0fr8QU9qT/iNBuJ8M7biyIk5nYpiL8RLOnDKJk/b3g0BNzGmnWiRLPraWWln9lhtJXD0U7Y3OwIWcjuOR6aSk='
+        public_key: '04217244ade914bda5864ce376a7bb5da68c0486a279cbf387f208292464c1e7c49bf8589d329d492838731fa405abe7e42c6f3c41c6ec9b9a5d257c28ad337695'
+        currency: 'btc'
+      eth:
+        address: '0x66D5EC86Ef50189fe6B61140a55256aa54788B43'
+        encrypted_private_key: 'QEVuQwEA+jZzJrbpIvOr/jqzECQcPRghItAqqYJlHfWqNu0B5QxOEtGsmuVGKaWrwn98cduAY5rTYbrVIwXGxmUu1xTpQVv3NayMbrqEJDW63bErp7U='
+        public_key: "04e2e53a98c2a969de10eba62a5ebfc7550f864d81805130160e893e0227206361a110ea65783ce187b86d0387a34b56db32be09d11c47680ec065002f1d63f6a4"
+        currency: 'eth'
+    amounts:
+      btc: 18000
+      eth: 1000000
+
+development:
+  <<: *default
+test:
+  <<: *default
+payment:
+  <<: *default

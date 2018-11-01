@@ -1,0 +1,6 @@
+.blog-posts-list
+  - @sorted_posts.each do |post_config|
+    .blog-posts-list--item
+      = render partial: 'post', locals: { post_config: post_config }
+
+  = render file: 'pages/about'

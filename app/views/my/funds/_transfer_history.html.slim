@@ -1,0 +1,22 @@
+= ot_container("Transfer history") do
+  - if @transfers.empty?
+    .pmkt-table-missing
+      p You have not made any transfers yet.
+  - else
+    = pmkt_table
+      thead.pmkt-md-up-block
+        tr
+          th.col-3 Transfer date
+          th.col-3 Reason
+          th.w-100 Amount
+          th.col-2
+      tbody
+        - @transfers.each do |transfer|
+          tr
+            td.col-3.pmkt-md-up-flex= format_secure_time(transfer.created_at)
+            td.col-3.pmkt-md-up-flex= format_reason(transfer)
+            td.w-100.text-nowrap= format_money(transfer.total_change, currency: transfer.currency, max_length: 25)
+            td.pmkt-table__action-cell= transfer_info_button(transfer)
+
+    = paginate @transfers
+

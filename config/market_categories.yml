@@ -1,0 +1,61 @@
+production: &default
+  markets_per_generated_category: 10
+  market_volume_days: 30
+  closing_soon_days: 30
+  categories:
+    Admin:
+      subtree:
+        Settling:
+          subtree:
+            Pending: {}
+            Accepted: {}
+        Publishing:
+          subtree:
+            Pending: {}
+            Accepted: {}
+            Ignored: {}
+    Generated:
+      subtree:
+        Featured:
+          fa_icon: 'star-o'
+          material_icon: '&#xE838;'
+          visible: true
+        'Most Predicted':
+          fa_icon: 'flag-o'
+          material_icon: '&#xE922;'
+          visible: true
+        'Biggest Movers':
+          fa_icon: 'sort'
+          material_icon: '&#xE8D5;'
+          visible: true
+        'Closing Soon':
+          fa_icon: 'clock-o'
+          material_icon: '&#xE192;'
+          visible: true
+    Published:
+      subtree:
+        Business:
+          visible: true
+        Techology:
+          visible: true
+        Finance:
+          visible: true
+        ICOs:
+          visible: true
+        Cryptocurrency:
+          visible: true
+        Politics:
+          visible: true
+          subtree:
+            USA:
+              visible: true
+            Europe:
+              visible: true
+            World:
+              visible: true
+        Sports:
+          visible: true
+
+development: *default
+test:
+  <<: *default

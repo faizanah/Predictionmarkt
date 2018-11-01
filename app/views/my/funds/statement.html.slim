@@ -1,0 +1,22 @@
+- currencies = ApplicationCurrency.select(&:enabled?).map { |ac| [ac, statement_my_funds_path(ac.code)] }
+
+= ot_container("Statement", currencies: currencies) do
+  - if @currency_transactions.empty?
+    .pmkt-table-missing
+      p There are no transactions yet.
+  - else
+    = pmkt_table
+      tr
+        thead
+          th.col-3 Transaction date
+          th.col-3 Reason
+          th.col-3 Change
+          th.col-3 Balance
+        tbody
+          - @currency_transactions.each do |trx|
+            tr
+              td.col-3= format_secure_time(trx.created_at)
+              td.col-3= link_to_cause(trx)
+              td.col-3= format_money(trx.total_change, currency: trx.currency, max_length: 25)
+              td.col-3= format_money(trx.total, currency: trx.currency, max_length: 25)
+    = paginate @currency_transactions

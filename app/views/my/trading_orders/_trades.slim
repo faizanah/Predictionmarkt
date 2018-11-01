@@ -1,0 +1,21 @@
+// TODO: pagination
+= ot_container('Trades')
+  - if @trading_order.trades.empty?
+    .pmkt-table-missing
+      p There are no trades made for this order.
+  - else
+    = pmkt_table
+      thead
+        tr
+          th.col-5 Date
+          th.col-2 Price
+          th.col-2 Shares
+          th.col-3 Volume
+      tbody
+        - @trading_order.trades.each do |trade|
+          tr
+            td.col-5= format_secure_time(trade.created_at)
+            td.col-2= format_odds(trade.odds)
+            td.col-2= trade.quantity
+            td.col-3= format_money(trade.amount, currency: trade.currency)
+

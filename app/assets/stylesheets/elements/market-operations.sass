@@ -1,0 +1,100 @@
+.market-operations-wrapper
+  //@extend .d-flex
+  // justify-content: center
+
+.market-operations
+  @extend .d-flex
+  justify-content: center
+  cursor: pointer
+  +mdc-elevation(6, $mdc-theme-primary-dark)
+  width: 100%
+  //width: 400px
+
+.market-spread
+  display: inline-block
+  position: relative
+  left: 50%
+  transform: translateX(-50%)
+  top: -100px
+  @extend .mdc-typography--subheading2
+  @extend .mdc-theme--primary
+
+.market-operation
+  @extend .d-flex
+  @extend .p-3
+  flex: 1
+  flex-direction: column
+  justify-content: space-around
+  //@extend .mdc-theme--text-disabled-on-background
+  color: rgba(0, 0, 0, 0.4)
+
+.market-operation-badge
+  @extend .mt-3 // must match padding .p-3 padding of .market-operation
+
+.market-operation-header-title
+  @extend .mdc-typography--subheading2
+  @extend .text-capitalize
+
+.market-operation-header-odds
+  @extend .mdc-typography--headline
+
+.market-operation-buy
+  @extend .market-operation
+  align-items: flex-start
+  &.active
+    color: $pmkt-theme-buy
+    background-color: $pmkt-theme-buy-light
+
+.market-operation-sell
+  @extend .market-operation
+  align-items: flex-end
+  &.active
+    background-color: $pmkt-theme-sell-light
+    color: $pmkt-theme-sell
+
+
+@mixin operation-preview
+  +pmkt-card-mb
+  @extend .p-3
+  @extend .d-flex
+  flex: 1
+  flex-direction: column
+  justify-content: space-around
+  +mdc-elevation(6, $mdc-theme-primary-dark)
+  width: 100%
+
+.market-operation-preview
+  &--buy
+    +operation-preview
+    //color: $pmkt-theme-buy
+    background-color: $pmkt-theme-buy-light
+    //@extend .mdc-theme--text-secondary-on-background
+  &--sell
+    +operation-preview
+    //color: $pmkt-theme-sell
+    background-color: $pmkt-theme-sell-light
+    //@extend .mdc-theme--text-secondary-on-background
+
+.order-types-wrapper
+  @extend .d-flex
+  justify-content: center
+
+.order-types
+  @extend .mdc-tab-bar
+  //+pmkt-card-mb
+  @extend .mb-4
+  cursor: pointer
+  //+mdc-elevation(0, $mdc-theme-primary-dark)
+  //width: 400px
+
+.order-type
+  @extend .mdc-tab
+
+  //@extend .mdc-theme--text-disabled-on-background
+  //color: rgba(0, 0, 0, 0.4)
+
+  &.active
+    @extend .mdc-tab--active
+
+.market-comments-card
+  @extend .card

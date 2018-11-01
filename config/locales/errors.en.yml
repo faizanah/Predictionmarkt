@@ -1,0 +1,56 @@
+en:
+  errors:
+    error_403:
+      title: '403 — not allowed'
+      description: 'You are not allowed to do that.'
+    error_404:
+      title: '404 — no such page'
+      description: 'This page is missing.'
+    error_422:
+      title: '422 — not allowed'
+      description: 'You are not allowed to do that.'
+    error_500:
+      title: '500 — server error'
+      description: 'Server-side error detected.'
+    error_502:
+      title: '502 — unavailable'
+      description: 'Website is under maintenance.'
+    error_503:
+      title: '503 — unavailable'
+      description: 'Website is under maintenance.'
+    authentication_failure: 'Authentication failure'
+    connection_failure: 'Connection failure'
+    permission_denied: 'Permission denied'
+    name_resolution_failure: 'Name resolution failure'
+    no_such_directory: 'No such directory'
+    failure: 'Failure'
+    timeout: 'Timeout'
+    no_error: 'Success'
+    no_a_record: 'can not be resolved'
+    account_registered_html: 'already registered. %{signin_link} to your account.'
+    signin: 'Sign in'
+    website_name_error: 'incorrect'
+  activemodel:
+    errors:
+      models:
+        generic_form:
+          attributes:
+            domain: 'Domain'
+            email: 'Email'
+            message: 'Message'
+            name: 'Name'
+            password: 'Password'
+            phone: 'Phone number'
+            user: 'User'
+            promocode: 'Promo code'
+            password_confirmation: 'Password confirmation'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            phone:
+              improbable_phone: 'Invalid phone number'
+  recaptcha:
+    errors:
+      verification_failed: Captcha check failed

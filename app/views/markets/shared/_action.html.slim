@@ -1,0 +1,5 @@
+.market-action-card
+  section.action-card-header
+    = link_to @market.title, market_path(@market)
+  #market_form
+    = yield

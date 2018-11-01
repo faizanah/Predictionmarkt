@@ -1,0 +1,27 @@
+.page-content
+  = page_headline('Referral Program', no_wrapper: true)
+
+  markdown:
+      We want to show our appreciation for our customers who share their satisfaction with our service.
+      As a way to say thanks, we’ve set up a referral program for you.
+
+      To participate in it, you must complete our registration process.
+      Your personal referral link will be available on your profile page and all the rewards will be deposited to your PredictionMarkt account.
+
+    ## How it works
+
+      All new users that sign up for PredictionMarkt through your personal unique link will be part of your referral reward.
+
+      The users that you referred will pay #{format_odds(pmkt_config[:referred_withdraw_comission])} instead of #{format_odds(pmkt_config[:withdraw_comission])} fee on their withdrawal, and you will receive 1% of their total deposits.
+
+      There is no limit to the number of referrals one can have nor to the minimum amount of money they deposit.
+
+      Funds will be deposited automatically and will be visible on your referrers page.
+
+    ## Ground Rules
+
+      * We have zero-tolerance policy towards spam and fraud;
+
+      * All all awards are subject to the discretion of the Bounty Manager;
+
+      * Any scams or abuse of any kind will result in a ban and loss of any pending rewards.

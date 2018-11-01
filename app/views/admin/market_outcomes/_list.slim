@@ -1,0 +1,19 @@
+.market-admin-card
+  .market-admin-card__header
+    h2 Market outcomes
+  .market-admin-card__content
+    = pmkt_table
+      tr
+        th.col-sm-6 Outcome
+        th.col-sm-2 Odds
+        th.col-sm-4
+      - @market.market_outcomes.sort_by(&:odds).reverse.reject { |o| o == @market_outcome }.each do |outcome|
+        tr class="#{outcome.winner? ? 'table-success' : nil}"
+          td.col-sm-6 title=outcome.title data={toggle: 'tooltip'}
+            span= outcome.format_short_title
+          td.col-sm-2
+            span= format_odds(outcome.odds)
+          td.col-sm-4
+            = set_winner_outcome_link(@market, outcome)
+            = link_to edit_admin_market_market_outcome_path(@market, outcome) do
+              i.material-icons &#xE3C9;

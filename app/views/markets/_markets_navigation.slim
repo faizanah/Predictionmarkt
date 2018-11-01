@@ -1,0 +1,51 @@
+= content_for :nav
+  .layout-nav__column
+    .mdc-drawer.mdc-drawer--permanent.mdc-typography
+      .mdc-drawer__drawer
+        nav.mdc-drawer__content.mdc-list
+          - nav_menu_link_groups.each_with_index do |links, index|
+            - links.each do |link|
+              = nav_link_to link[:path], active: link[:active] do
+                - if link[:icon]
+                  i.material-icons.mdc-list-item__graphic aria-hidden="true"
+                    == link[:icon]
+                - if link[:offset]
+                  = ("&nbsp;"*6).html_safe
+                = link[:name]
+            - if index < nav_menu_link_groups.size - 1
+              hr.mdc-list-divider
+          - admin_only do
+            hr.mdc-list-divider
+            = link_to 'Create', new_admin_market_path, class: 'btn-action'
+
+  .layout-nav__row.container
+    - if false
+      - nav_chips_link_groups.each do |links|
+        .layout-nav__row-group.mdc-chip-set.mdc-chip-set--choice
+          - links.each do | link|
+            - classes = ['mdc-chip', 'mdc-chip-set--choice']
+            // TODO: mdc-chip--selected
+            - classes << 'mdc-chip--activated' if link[:active]
+            = link_to link[:path], class: 'layout-nav__row-group-link' do
+              div class=classes
+                - if link[:icon]
+                  i.material-icons.mdc-chip__icon.mdc-chip__icon--leading== link[:icon]
+                .mdc-chip__text
+                  = link[:name]
+              /= link_to link[:name], link[:path], class: 'mdc-chip__text'
+
+    .mdc-select.mdc-select--box role="listbox"
+      .mdc-select__surface tabindex="0"
+        .mdc-select__label.mdc-select__label--float-above Category
+        .mdc-select__selected-text
+        .mdc-select__bottom-line
+      .mdc-menu.mdc-select__menu
+        ul.mdc-list.mdc-menu__items
+          - nav_chips_link_groups.each_with_index do |links, index|
+            - links.each do | link|
+              = nav_menu_to link[:path], active: link[:active] do
+                - if link[:offset]
+                  = ("&nbsp;"*6).html_safe
+                = link[:name]
+            - if index < nav_chips_link_groups.size - 1
+              .mdc-list-divider

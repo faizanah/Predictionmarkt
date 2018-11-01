@@ -1,0 +1,6 @@
+production: &default
+  withdraw_comission: 0.04
+  referred_withdraw_comission: 0.03
+development: *default
+test:
+  <<: *default

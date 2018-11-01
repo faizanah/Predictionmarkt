@@ -1,0 +1,36 @@
+.row
+  .col-6
+    - if @contract.ask_orders_summary.empty?
+      .pmkt-table-missing-aligned
+        p No active sell orders.
+    - else
+      = pmkt_table
+        thead
+          tr
+            th.col-6*tooltip('Requested price to sell the shares') Ask
+            th.col-6*tooltip('Total value of the shares offered to sell at the ask price') Volume
+        tbody
+          - @contract.ask_orders_summary.each do |odds, price, shares|
+            tr
+              td.col-6= quote_summary(shares, odds)
+              td.col-6= format_money(shares*price, currency: params[:currency])
+  .col-6
+    - if @contract.bid_orders_summary.empty?
+      .pmkt-table-missing-aligned
+        p No active buy orders.
+    - else
+      = pmkt_table
+        thead
+          tr
+            th.col-6*tooltip('Offered price to buy the shares') Bid
+            th.col-6*tooltip('Total value offered for the shares at the bid price') Volume
+        tbody
+          - @contract.bid_orders_summary.each do |odds, price, shares|
+            // TODO add hint with currency exchange info
+            tr
+              td.col-6= quote_summary(shares, odds)
+              td.col-6= format_money(shares*price, currency: params[:currency])
+//hr
+//p.generic-hint
+  | The prices are represented as a percentage of the maximum (settlement) price. For example, when buying shares at 50%, you double your money if the outcome becomes true.
+

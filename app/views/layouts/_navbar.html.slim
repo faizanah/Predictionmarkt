@@ -1,0 +1,26 @@
+header.mdc-toolbar.mdc-toolbar--fixed data-headroom=true
+  .mdc-toolbar__row
+    section.header-brand
+      a[href="/"]
+        .header-brand__large
+          = image_tag('logos/horizontal-white-bg.svg', height: '40', alt: 'PredictionMarkt')
+        .header-brand__small
+          = image_tag('logos/square-white-bg.svg', height: '40', alt: 'PredictionMarkt')
+    section.header-menu
+      nav.mdc-tab-bar#header-menu__tabs
+        - header_links.each do |name, path|
+          = active_link_to name, path, class: 'mdc-tab', class_active: 'mdc-tab--active'
+        - admin_only do
+          = link_to 'Admin', admin_markets_path
+        span.mdc-tab-bar__indicator
+    section.session-menu.mdc-menu-anchor
+      - if current_user
+        = menu_toggle('session-menu', '&#xE851;&#xE5C5;'.html_safe )
+        = menu_items('session-menu', header_menu_items)
+      - else
+        .session-menu__wide
+          - session_menu_items.each do |link|
+            = link
+        .session-menu__narrow.mdc-menu-anchor
+          = menu_toggle('session-menu', '&#xE851;&#xE5C5;'.html_safe )
+          = menu_items('session-menu', session_menu_items)

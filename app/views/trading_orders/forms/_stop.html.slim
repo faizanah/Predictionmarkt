@@ -1,0 +1,8 @@
+.form-block
+  = f.input :stop_price, as: :integer, label: "Stop price at which the order must be triggered",
+                         input_html: { min: 1 }
+
+= render partial: "trading_orders/forms/limit_details", locals: { f: f }
+
+.form-block
+  p This order will be placed on the order book and remain valid until you cancel it.

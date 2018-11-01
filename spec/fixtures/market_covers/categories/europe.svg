@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg version="1.1" baseProfile="tiny" width="281.18mm" height="187.47mm" viewBox="0 0 28118 18747" preserveAspectRatio="xMidYMid" fill-rule="evenodd" clip-path="url(#presentation_clip_path)" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+ <defs class="ClipPathGroup">
+  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+   <rect x="0" y="0" width="28118" height="18747"/>
+  </clipPath>
+ </defs>
+ <defs class="TextShapeIndex">
+  
+ </defs>
+ <defs class="TextEmbeddedBitmaps"/>
+ <g>
+  <g id="id2" class="Master_Slide">
+   <g id="bg-id2" class="Background"/>
+   <g id="bo-id2" class="BackgroundObjects"/>
+  </g>
+ </g>
+ <g class="SlideGroup">
+  <g>
+   <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+    <g class="Page">
+     <g class="Group">
+      <g class="com.sun.star.drawing.RectangleShape">
+       <g id="id3">
+        <path fill="rgb(0,51,153)" stroke="none" d="M 14060,18747 L 1,18747 1,1 28118,1 28118,18747 14060,18747 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id4">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 14059,2084 L 14292,2800 15047,2798 14435,3241 14670,3961 14058,3516 13445,3961 13680,3241 13068,2797 13825,2797 14059,2084 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id5">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 17184,2922 L 17417,3640 18174,3642 17560,4088 17795,4806 17183,4361 16570,4806 16805,4088 16193,3642 16948,3642 17184,2922 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id6">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 19473,5210 L 19705,5928 20459,5928 19845,6374 20079,7092 19467,6648 18855,7092 19090,6374 18476,5928 19231,5928 19473,5210 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id7">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 20309,8334 L 20541,9050 21295,9050 20681,9495 20915,10214 20303,9770 19691,10214 19926,9495 19312,9050 20065,9050 20309,8334 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id8">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 19472,11457 L 19705,12171 20460,12170 19848,12614 20082,13334 19470,12889 18858,13334 19093,12618 18479,12168 19234,12166 19472,11457 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id9">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 17185,13743 L 17418,14457 18175,14456 17561,14900 17795,15620 17183,15175 16571,15620 16806,14902 16192,14456 16947,14454 17185,13743 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id10">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 14059,14581 L 14292,15297 15049,15295 14435,15742 14670,16461 14058,16015 13445,16460 13680,15742 13068,15295 13823,15295 14059,14581 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id11">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 10935,13743 L 11166,14457 11925,14456 11311,14900 11545,15620 10933,15175 10319,15620 10554,14902 9942,14456 10697,14454 10935,13743 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id12">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 8649,11457 L 8882,12171 9640,12170 9027,12614 9261,13334 8647,12889 8033,13334 8268,12616 7656,12170 8411,12168 8649,11457 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id13">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 7814,8334 L 8045,9050 8798,9050 8184,9495 8419,10214 7807,9770 7194,10214 7429,9495 6817,9050 7572,9050 7814,8334 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id14">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 8649,5210 L 8882,5928 9639,5928 9027,6374 9261,7092 8647,6648 8033,7092 8268,6374 7656,5928 8411,5928 8649,5210 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id15">
+        <path fill="rgb(255,255,255)" stroke="none" d="M 10937,2922 L 11170,3640 11927,3642 11315,4088 11549,4804 10935,4360 10321,4804 10556,4086 9944,3640 10699,3640 10937,2922 Z"/>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,22 @@
+- if @shares_transactions.empty?
+  .pmkt-table-missing
+    p You don't own any shares in this market.
+- else
+  = pmkt_table
+    thead.pmkt-md-up-block
+      tr
+        th.w-100
+        th.col-2 Price
+        th.col-2 Volume
+        th.col-2 Shares
+        th.col-md-2.col-sm-6
+    tbody
+      - @shares_transactions.each do |trx|
+        tr
+          td.w-100= link_to trx.market_outcome.format_short_title, my_share_path(trx.contract)
+          - buy_odds = current_user.avg_buy_odds(trx.contract)
+          - current_odds = trx.contract.quote.last_trade&.odds
+          td.col-2.pmkt-md-up-flex= format_odds_compare(current_odds, buy_odds, detailed: true)
+          td.col-2.pmkt-md-up-flex= shares_value(trx)
+          td.col-2.pmkt-md-up-flex= trx.total
+          td.pmkt-table__action-cell= trade_outcome_button(trx.market_outcome, currency: trx.contract.currency)

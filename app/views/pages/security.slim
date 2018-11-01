@@ -1,0 +1,84 @@
+.page-content
+
+  = page_headline('Security & Privacy', no_wrapper: true)
+
+  markdown:
+      PredictionMarkt takes security and any other bugs on PreidctionMarkt very seriously.
+
+      Please report any findings to #{mail_to 'concierge@predictionmarkt.com'}.
+
+    ## Emergency
+
+      If it is a really urgent and crucial matter, you can also automatically stop all withdrawals.
+      Whenever the Ethereum address 0x1e1eD25cC5a41F0f8dBb3691fF8EA3D948bAf977 has a balance of 0.05 ETH or more no withdrawals for any user on PredictionMarkt will be processed.
+
+      Any deposit to that address will be returned to the sender's address.
+
+    ## Account security
+
+      You can significantly improve security of your account by enabling two-factor authentication for your Google or Facebook profile.
+
+      Additionally, you can put a special security flag on your account by contacting #{mail_to 'concierge@predictionmarkt.com'}. In that case, only withdrawals to your trusted withdrawal addresses will be processed.
+
+    ## Funds security
+
+      All PredictionMarkt funds are managed in the offline wallets and all the withdrawal transactions are processed offline (hence the delay with withdrawal processing).
+
+    ## Privacy
+
+      PredictionMarkt is committed to protecting your privacy and your personally identifiable information.
+
+      In order to improve our services and the website, and provide more convenient, relevant experiences to you, we and our vendors may use “cookies”, “web beacons”, and similar devices to track your activities.
+      The tracked activity data is attached to your account on PredictionMarkt.
+
+      We also log all access to all accounts by IP address and we log all your payment activity for security reasons. None of your contacts or payment information will be shared with non-agent third parties.
+
+    ## Bug Bounty
+
+      Help us out by lending your skills to finding and fixing critical bugs, and you’ll be rewarded with recognition and ETH!
+
+    ### Eligibility and Responsible Disclosure
+
+      To promote the discovery and reporting of vulnerabilities and increase user safety, we ask that you:
+
+      * Share the security issue with us in detail;
+
+      * Please be respectful of our existing applications. Spamming forms through automated vulnerability scanners will not result in any bounty or award since those are explicitly out of scope;
+
+      * Give us a reasonable time to respond to the issue before making any information about it public;
+
+      * Do not access or modify our data or our users’ data, without explicit permission of the owner. Only interact with your own accounts or test accounts for security research purposes;
+
+      * Contact us immediately if you do inadvertently encounter user data. Do not view, alter, save, store, transfer, or otherwise access the data, and immediately purge any local information upon reporting the vulnerability;
+
+      * Act in good faith to avoid privacy violations, destruction of data, and interruption or degradation of our services (including denial of service).
+
+      We only reward the first reporter of a vulnerability. Public disclosure of the vulnerability prior to resolution may cancel a pending reward. We reserve the right to disqualify individuals from the program for disrespectful or disruptive behavior.
+
+    ### Out-of-scope Vulnerabilities
+
+      The following issues are outside the scope of our rewards program:
+
+      * Our policies on presence/absence of SPF/DMARC records or phishing risk;
+
+      * Password, email and account policies, such as email id verification, reset link expiration, password complexity;
+
+      * Lack of CSRF tokens (unless there is evidence of actual, sensitive user action not protected by a token);
+
+      * Missing security headers which do not lead directly to a vulnerability;
+
+      * Missing best practices (we require evidence of a security vulnerability);
+
+      * Use of a known-vulnerable library (without evidence of exploitability);
+
+      * Reports from automated tools or scans;
+
+      * Vulnerabilities affecting users of outdated browsers or platforms;
+
+      * Absence of rate limiting, unless related to authentication.
+
+    ## PGP Key
+
+      You can use encryption for any communication with us. Feel free to import #{link_to 'our public PGP key', '/predictionmarkt.gpg'} or use #{link_to 'Keybase', 'https://keybase.io/predictionmarkt'}.
+
+      Key ID: 9C5E70996987BC04

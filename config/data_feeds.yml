@@ -1,0 +1,55 @@
+production: &default
+  coinmarketcap:
+    selections:
+      quarter:
+        top_coins: 10
+        lookback_days: 14
+        price_up: 1.3
+        price_down: 0.7
+        market_category: 'Cryptocurrency'
+  predictit:
+    selections:
+      long_term:
+        min_close_date_days: 180 # half a year
+        max_close_date_days: 1000 # around 3 years
+        groups:
+          67: # National
+            market_category: 'USA'
+            limit: 6
+            regexp: '^(Who|Which)'
+          83: # White house
+            market_category: 'USA'
+            limit: 6
+            regexp: '^Will .* be .*'
+          52: # Europe
+            market_category: 'Europe'
+            limit: 6
+            regexp: '^(?!.*Trump)'
+          51: # Asia / Pacific
+            market_category: 'World'
+            regexp: '^(?!.*Trump)'
+            limit: 6
+      short_term:
+        min_close_date_days: 7
+        max_close_date_days: 30
+        groups:
+          67: # National
+            market_category: 'USA'
+            limit: 2
+            regexp: '^(Who|Which)'
+          83: # White house
+            market_category: 'USA'
+            limit: 2
+            regexp: '^Will .* be .*'
+          52: # Europe
+            market_category: 'Europe'
+            limit: 2
+            regexp: '^(?!.*Trump)'
+          51: # Asia / Pacific
+            market_category: 'World'
+            regexp: '^(?!.*Trump)'
+            limit: 2
+
+development: *default
+test:
+  <<: *default

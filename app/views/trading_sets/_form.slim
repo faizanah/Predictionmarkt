@@ -1,0 +1,39 @@
+section.trade-card__content-header
+  = page_headline('Fixed-price outcome bundle', no_wrapper: true)
+  = trading_currency_menu('trading_set')
+
+section.trade-card__content
+  = simple_form_for(@form, url: market_trading_sets_path(@market, @form.uri_params)) do |f|
+    .form-block
+      .market-operations-wrapper
+        .market-operations
+          = market_operation_link('trading_set', 'buy')
+          = market_operation_link('trading_set', 'sell')
+
+    .form-block= trading_form_hidden_fields(f)
+
+    .form-block.embedded-page-content
+      p Fixed-price outcome bundle consisting of one share of each outcome in this market can be purchased from or sold to PredictionMarkt at any time.
+      p The price of each bundle is #{market_settle_amount}.
+      p Because only one market outcome is possible, the total payoff from holding one outcome bundle until the market closes is #{market_settle_amount}.
+
+    - if !current_user
+      = render partial: 'trading_orders/forms/please_sign_in'
+    - elsif @form.bid? && @form.money_balance.zero?
+      = render partial: 'trading_orders/forms/no_funds'
+    - elsif @form.ask? && @form.sets_balance.zero?
+      = render partial: 'trading_orders/forms/no_sets'
+    - else
+      .form-block
+        - if @form.bid?
+          h6 Please select the amount of money to spend
+          = f.input :money, as: :percentage, label: "Amount, in #{params[:currency].upcase}"
+        - elsif @form.ask?
+          h6 Please select how many bundles you want to sell
+          = f.input :quantity, as: :percentage, label: "Number of bundles"
+
+    .form-footer.text-center.mt-0
+      = f.button :submit, params[:operation],
+        disabled: @form.disabled?,
+        class: "btn-#{params[:operation]}"
+

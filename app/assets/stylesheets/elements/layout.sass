@@ -1,0 +1,216 @@
+body
+  @extend .mdc-typography
+  display: flex
+  flex-direction: column
+  // bootstrap workaround
+  height: unset !important
+  min-height: 100vh
+
+.nav-link
+  @extend .text-uppercase
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-family-serif
+
+@mixin layout-y-offset
+  @extend .mt-3
+
+@mixin layout-columns
+  display: flex
+  flex-direction: column
+  +layout-y-offset
+
+@mixin header-x-offset
+  @extend .mx-2
+
+.layout
+  &__body-outer
+    @extend .mdc-toolbar-fixed-adjust
+    display: flex
+    flex-direction: row
+    flex: 1 1 auto // sticky footer
+  &__body
+    display: flex
+    flex-direction: column
+    flex: 1 1 auto // sticky footer
+  &__body-inner
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    flex: 1
+  &__content
+    +layout-columns
+    flex: 1 1 70%
+  &__nav
+    order: -1
+  &__aside
+    +layout-columns
+    flex: 1 1 30%
+
+  &__content-flash
+    @extend .container
+    .alert // alerts already have mb-3 from bootstrap
+  &__content-body
+    @extend .container
+
+.layout-debug
+  .layout
+    &__body
+      background: blue
+    &__content
+      background: orange
+    &__body
+      background: green
+
+html, body
+  height: 100%
+  margin: 0
+
+header, footer
+  flex: none
+
+.layout-nav
+  &__column
+    display: flex
+    height: 100%
+
+  &__row
+    +layout-columns
+    display: none
+
+  &__row-group
+    width: 100%
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+
+    .mdc-chip--activated
+      font-weight: bold
+
+  &__row-group-link
+    text-decoration: none
+    &:hover
+      text-decoration: none
+
+// Header
+
+header.mdc-toolbar
+  +mdc-toolbar-fill-color-accessible($white)
+
+.header-brand
+  +header-x-offset
+  @extend .mdc-toolbar__section
+  @extend .mdc-toolbar__section--align-start
+  @extend .mdc-toolbar__section--shrink-to-fit
+  display: flex
+  align-items: center
+
+  &__small
+    display: none
+
+.header-menu
+  @extend .mdc-toolbar__section
+  display: flex
+  align-items: center
+  a:hover
+    text-decoration: none // dunno why it's needed
+
+.session-menu
+  +header-x-offset
+  display: flex
+  align-items: center
+  @extend .mdc-toolbar__section
+  @extend .mdc-toolbar__section--align-end
+  @extend .mdc-toolbar__section--shrink-to-fit
+  &__narrow
+    display: none
+
+  &__toggle
+    @extend .material-icons
+    //@extend .mdc-toolbar__icon
+    //@extend .mdc-toolbar__menu-icon
+    &,&::before,&::after
+      box-sizing: content-box
+
+  &__link
+    @extend .text-uppercase
+    @extend .mx-3
+    &:hover
+      text-decoration: none
+
+.layout-footer
+  @extend .d-flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  @extend .my-5
+
+  &__logo
+
+  &__contacts
+    @extend .my-4
+    @extend .d-flex
+
+  &__links
+    @extend .mdc-typography--body1
+    @extend .d-flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+
+  &__link
+    @extend .mx-4
+    @extend .my-2
+    opacity: 0.6
+    transition: opacity 0.3s
+    &:hover
+      opacity: 0.8
+
+.page-headline-wrapper
+  @extend .py-4
+  margin: auto
+  h1, h2, h3
+    @extend .mdc-typography--display1
+    // @extend .mdc-typography--headline
+    @extend .text-center
+  max-width: 650px
+
+@include media-breakpoint-down(lg)
+  .layout-nav
+    &__column
+      display: none !important
+    &__row
+      display: flex !important
+  .layout
+    &__body-outer
+      flex-direction: column
+    &__body-inner
+      flex-direction: column
+    &__content
+      flex: 0 0 auto
+    &__nav
+      flex: 0 0 auto
+    &__aside
+      flex: 0 0 auto
+  .header-brand
+    &__large
+      display: none !important
+    &__small
+      display: flex !important
+
+@include media-breakpoint-down(sm)
+  .session-menu__wide
+    display: none !important
+  .session-menu__narrow
+    display: flex !important
+  .header-brand
+    &__small
+      display: none !important
+
+@include media-breakpoint-down(xs)
+  .layout
+    &__content-body
+      padding-left: 0px !important
+      padding-right: 0px !important
+

@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta[http-equiv="Content-Type" content="text/html; charset=utf-8"]
+    =stylesheet_link_tag('external/emails')
+    title PredictionMarkt
+    // check https://www.campaignmonitor.com/css/ before changing
+  body
+    table.content-wrapper
+      tbody
+        tr
+          td
+            table.content
+              tbody
+                tr
+                  td.content__header
+                    table
+                      tbody
+                        tr
+                         td.content__aside
+                         td
+                           = link_to root_url, class: 'content__header-link' do
+                             = email_image_tag('logos/horizontal-white-bg.png', class: 'content__header-image', alt: 'PredictionMarkt')
+                         td.content__aside
+                tr
+                  td.content__body
+                    table
+                      tbody
+                        tr
+                          td.content__aside
+                          td=yield
+                          td.content__aside
+                tr
+                  td.content__footer
+                    = link_to root_url, class: 'content__footer-link' do
+                      = email_image_tag('logos/square-white-bg.png', class: 'content__footer-image', alt: 'PredictionMarkt')

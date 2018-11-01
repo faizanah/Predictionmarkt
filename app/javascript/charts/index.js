@@ -1,0 +1,1 @@
+require('./trading-view')

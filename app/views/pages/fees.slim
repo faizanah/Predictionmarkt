@@ -1,0 +1,33 @@
+.page-content
+  = page_headline('Service Fees', no_wrapper: true)
+
+  markdown:
+    PredictionMarkt charges a #{format_odds(pmkt_config[:withdraw_comission])} withdrawal fee. There are no other fees for anything else.
+
+    ## Deposit fees
+
+    PredictionMarkt does not charge any deposit fees.
+
+    ## Trading fees
+
+    PredictionMarkt does not charge fees for transactions made on the platform, including:
+
+    * No fees for trading shares;
+    * No fees for selling or purchasing outcome bundles;
+    * No fees for winning and market settlement in any category.
+
+    ## Withdrawal fees
+
+    PredictionMarkt charges #{format_odds(pmkt_config[:withdraw_comission])} fee when you withdraw money from your account.
+
+    All the currency transactions are already included in the withdrawal fee.
+
+    ## Maintenance fees
+
+    PredictionMarkt does not charge a maintenance fee for inactive accounts.
+
+    ## Support fees
+
+    PredictionMarkt does not charge any support fees.
+
+    Please contact us at #{mail_to 'concierge@predictionmarkt.com'} if you need help!

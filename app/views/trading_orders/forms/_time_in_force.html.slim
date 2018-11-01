@@ -1,0 +1,13 @@
+.form-block.collapsible.my-3#time_in_foce
+  h5
+    a data-toggle="collapse" data-parent="#time_in_force" href="#time_in_force_body" aria-expanded="true" aria-controls="time_in_force_body" class="collapse-indicator collapsed"
+      | Advanced
+.form-block.collapse.my-0#time_in_force_body
+    p Select for how long the order will remain active before it is executed or expired.
+    = f.input :time_in_force, collection: @form.time_in_force_options, include_blank: false, input_html: { onchange: '$("#"+this.value).show().siblings().hide();' }
+
+.form-block.time-in-force-details.my-0
+  #gtc.collapse.show
+  #ioc.collapse
+  #gtt.collapse
+    = f.input :expires_at, input_html: { class: 'daterange', data: { 'single-date-picker' =>  true, 'min-date' => Time.current.tomorrow.to_date } }, as: 'string'

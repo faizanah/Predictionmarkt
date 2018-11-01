@@ -1,0 +1,1945 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQ4BV1dWDxABVFdQAQIEX1M="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"6d0ece54b7","agent":"","transactionName":"NFBbY0VUXEEEARUPXg0af0JZVkZbCgxOBV4KW1RWRV5XRgYDEUhHClBORBlBQFMLEQ0HRQZRA1RCR0BXCwEYOVUGQVheWw==","applicationID":"106263397","errorBeacon":"bam.nr-data.net","applicationTime":314}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IOTA (MIOTA) Historical Data | CoinMarketCap</title>
+<meta name="google-site-verification" content="EDc1reqlQ-zAgeRrrgAxRXNK-Zs9JgpE9a0wdaoSO9A">
+<meta property="og:type" content="website">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:image" content="https://s2.coinmarketcap.com/static/img/coins/200x200/1720.png" />
+<meta property="og:title" content="IOTA (MIOTA) historical data | CoinMarketCap" />
+<meta name="description" content="View IOTA daily historical data (OHLCV)" />
+<meta property="og:description" content="View IOTA daily historical data (OHLCV)" />
+<link rel="shortcut icon" type="image/png" href="https://s2.coinmarketcap.com/static/img/coins/16x16/1720.png" />
+<link rel="canonical" href="https://coinmarketcap.com/currencies/iota/historical-data/?start=20180101&amp;end=20180330" />
+<link rel="alternate" href="https://coinmarketcap.com/de/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="de">
+<link rel="alternate" href="https://coinmarketcap.com/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="en">
+<link rel="alternate" href="https://coinmarketcap.com/es/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="es">
+<link rel="alternate" href="https://coinmarketcap.com/fil/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="fil">
+<link rel="alternate" href="https://coinmarketcap.com/fr/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="fr">
+<link rel="alternate" href="https://coinmarketcap.com/hi/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="hi">
+<link rel="alternate" href="https://coinmarketcap.com/it/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="it">
+<link rel="alternate" href="https://coinmarketcap.com/ja/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="ja">
+<link rel="alternate" href="https://coinmarketcap.com/ko/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="ko">
+<link rel="alternate" href="https://coinmarketcap.com/pt-br/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="pt-br">
+<link rel="alternate" href="https://coinmarketcap.com/ru/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="ru">
+<link rel="alternate" href="https://coinmarketcap.com/vi/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="vi">
+<link rel="alternate" href="https://coinmarketcap.com/zh/currencies/iota/historical-data/?start=20180101&amp;end=20180330" hreflang="zh">
+<link href="https://s2.coinmarketcap.com/static/cloud/compressed/base.5727d3d7.min.css" rel='stylesheet'>
+<link href="https://s2.coinmarketcap.com/static/cloud/compressed/historical_data.3acb0e01.min.css" rel='stylesheet'>
+<style>
+        .daterangepicker .calendar {
+            /* Make room for weekday names in other languages */
+            max-width: 285px;
+        }
+    </style>
+<script>
+        function getCookie(e){var n=" "+document.cookie,t=" "+e+"=",i=null,o=0,u=0;return n.length>0&&-1!=(o=n.indexOf(t))&&(o+=t.length,-1==(u=n.indexOf(";",o))&&(u=n.length),i=unescape(n.substring(o,u))),i}
+
+        var DEFAULT_CURRENCY = 'USD';
+        dataLayer = [{
+            'section': 'Details',
+            'subSection': 'Currencies Historical Data',
+            'firstSessionDate': getCookie('gtm_session_first'),
+            'lastSessionDate': getCookie('gtm_session_last'),
+            'language': 'en',
+            'currency': getCookie('currency') || DEFAULT_CURRENCY,
+            'siteTheme': getCookie('theme') || 'day'
+        }];
+        </script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MNVXW26');
+        </script>
+
+<script>
+            var NightMode = (function () {
+                var key = 'theme', on = 'night', off = 'day';
+                var _trackEvent = function (value) {
+                    dataLayer.push({
+                        'event': 'customEvent',
+                        'eventCategory': 'Night Mode',
+                        'eventAction': 'Night Mode Toggled',
+                        'eventLabel': value
+                    });
+                };
+                var _setCookie = function (value) {
+                    Cookies.set(key, value, {expires: 3650});
+                };
+                var _activateSwitch = function (value) {
+                    if (value) {
+                        $('[data-night-mode-on]').addClass('active');
+                        $('[data-night-mode-off]').removeClass('active');
+                    } else {
+                        $('[data-night-mode-on]').removeClass('active');
+                        $('[data-night-mode-off]').addClass('active');
+                    }
+                };
+                var initSwitch = function () {
+                    $('[data-night-mode-on]').on('click', function () {
+                        $('body').addClass('night-mode');
+                        _activateSwitch(true);
+                        _setCookie(on);
+                        _trackEvent('on');
+                    });
+                    $('[data-night-mode-off]').on('click', function () {
+                        $('body').removeClass('night-mode');
+                        _activateSwitch(false);
+                        _setCookie(off);
+                        _trackEvent('off');
+                    });
+
+                    _activateSwitch(Cookies.get(key) === on);
+                };
+                var init = function () {
+                    if (getCookie(key) === on) {
+                        var nightModeClass = 'night-mode';
+                        var currentClass = document.body.className;
+                        if (currentClass.length > 0) {
+                            if (currentClass.indexOf(nightModeClass) === -1) {
+                                document.body.className = currentClass + ' ' + nightModeClass;
+                            }
+                        } else {
+                            document.body.className = nightModeClass;
+                        }
+                    }
+                };
+                return {initSwitch: initSwitch, init: init};
+            })();
+        </script>
+<script async='async' src="https://s2.coinmarketcap.com/static/cloud/compressed/prebid.cb5bd327.min.js"></script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
+        </script>
+<script>
+          googletag.cmd.push(function() {
+            
+                
+                    googletag.defineSlot('/48901027/non_landing_leaderboard_top', [728, 90], 'div-gpt-ad-1488495260324-9').addService(googletag.pubads());
+                    googletag.defineSlot('/48901027/non_landing_side', [160, 600], 'div-gpt-ad-1488495260324-10').addService(googletag.pubads());
+                    googletag.defineSlot('/48901027/non_landing_leaderboard_bottom', [728, 90], 'div-gpt-ad-1488495260324-8').addService(googletag.pubads());
+                
+            
+
+            
+                googletag.defineSlot('/48901027/native_coin_details', ['fluid'], 'div-gpt-ad-1520101567641-0').addService(googletag.pubads());                
+                googletag.pubads().setTargeting("coin_id","1720");
+            
+
+            
+            var mapping = googletag.sizeMapping()
+              .addSize([1280,0], [1280, 90])
+              .addSize([970,0], [970, 90])
+              .addSize([750,0], [750, 90])
+              .addSize([0,0], [320, 100])
+              .build();
+            googletag.defineSlot('/48901027/full_width_top', [960, 90], 'div-gpt-ad-1517714727704-0')
+                .defineSizeMapping(mapping)
+                .addService(googletag.pubads());
+
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+          });
+        </script>
+<script>
+
+        //Load the UAM JavaScript Library
+        !function(a9,a,p,s,t,A,g){if(a[a9])return;function
+        q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+        apstag.init({
+            pubID: '1edde03c-121e-457d-9c35-ad4fca989bac',
+            adServer: 'googletag',
+            bidTimeout: 2000
+        });
+
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+
+        </script>
+<script>
+        function fetchHeaderBids() {
+            var bidTimeout = 2000;
+            var adUnits = [
+            
+                
+                    {
+                        code: 'div-gpt-ad-1488495260324-9',
+                        sizes: [[728, 90]],
+                        bids: [
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "11835084" // [D] 728x90 Detail ATF: 11835084
+                            }
+                        },        
+                        {
+                            "bidder": "indexExchange",
+                            "params": {
+                                "id": "4",
+                                "siteID": "219067" // coinmarketcap.com_Desktop_728x90_ATF Detail
+                            }
+                        }]
+                    },{
+                        code: 'div-gpt-ad-1488495260324-10',
+                        sizes: [[160, 600]],
+                        bids: [
+                        {
+                            "bidder": "openx",
+                            "params": {
+                                "unit": "539181152",
+                                "delDomain": "coinmarketcap-d.openx.net" // Desktop - 160x600 Detail page
+                            }
+                        },
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "11835085" // [D] 160x600 Detail: 11835085
+                            }
+                        },        
+                        {
+                            "bidder": "indexExchange",
+                            "params": {
+                                "id": "5",
+                                "siteID": "219068" // coinmarketcap.com_Desktop_160x600_Side Detail
+                            }
+                        },        
+                        {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": "496633" // CoinMarketCap_AiH_160x600_Side_DETAILPAGE_Desktop
+                            }
+                        }]
+                    },{
+                        code: 'div-gpt-ad-1488495260324-8',
+                        sizes: [[728, 90]],
+                        bids: [
+                        {
+                            "bidder": "openx",
+                            "params": {
+                                "unit": "539181150",
+                                "delDomain": "coinmarketcap-d.openx.net" // Desktop - 728x90 BTF Detail page
+                            }
+                        },
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "11835086" // [D] 728x90 Detail BTF: 11835086
+                            }
+                        },        
+                        {
+                            "bidder": "indexExchange",
+                            "params": {
+                                "id": "6",
+                                "siteID": "219069" // coinmarketcap.com_Desktop_728x90_BTF Detail
+                            }
+                        },        
+                        {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": "496631" // CoinMarketCap_AiH_728x90_BTF_DETAILPAGE_Desktop
+                            }
+                        }]
+                    }
+                
+            
+            ];
+
+            var apstagSlots = [
+            
+                
+                    {
+                        slotID: 'div-gpt-ad-1488495260324-9',
+                        slotName: '/48901027/non_landing_leaderboard_top',
+                        sizes: [[728, 90]]
+                    },
+                    {
+                        slotID: 'div-gpt-ad-1488495260324-10',
+                        slotName: '/48901027/non_landing_side',
+                        sizes: [[160, 600]]
+                    },
+                    {
+                        slotID: 'div-gpt-ad-1488495260324-8',
+                        slotName: '/48901027/non_landing_leaderboard_bottom',
+                        sizes: [[728, 90]]
+                    }
+                
+            
+            ];
+
+            var bidders = ['a9', 'prebid'];
+
+            var requestManager = {
+                adserverRequestSent: false,
+            };
+            
+                bidders.forEach(function(bidder) {
+                requestManager[bidder] = false;
+            })
+
+            function allBiddersBack() {
+                var allBiddersBack = bidders
+                .map(function(bidder) {
+                    return requestManager[bidder];
+                })
+                .filter(Boolean)
+                .length === bidders.length;
+                return allBiddersBack;
+            }
+            
+            function headerBidderBack(bidder) {
+                if (requestManager.adserverRequestSent === true) {
+                    return;
+                }
+                if (bidder === 'a9') {
+                    requestManager.a9 = true;
+                } else if (bidder === 'prebid') {
+                    requestManager.prebid = true;
+                }
+                if (allBiddersBack()) {
+                    sendAdserverRequest();
+                }
+            }
+
+            function sendAdserverRequest() {
+                if (requestManager.adserverRequestSent === true) {
+                    return;
+                }
+
+                requestManager.adserverRequestSent = true;
+                pbjs.adserverRequestSent = true;
+                requestManager.sendAdserverRequest = true;
+                googletag.cmd.push(function() {
+                    apstag.setDisplayBids();
+                    if (pbjs.version) {
+                        pbjs.setTargetingForGPTAsync();
+                    }
+                    googletag.pubads().refresh();
+                });
+            }
+
+            function requestBids(apstagSlots, adUnits, bidTimeout) {
+                apstag.fetchBids({
+                    slots: apstagSlots,
+                    timeout: bidTimeout
+                    }, function(bids) {
+                        headerBidderBack('a9');
+                    });
+
+                // request bids from prebid
+                pbjs.que.push(function() {
+                    pbjs.setPriceGranularity("high");
+                    pbjs.addAdUnits(adUnits);
+                    pbjs.enableSendAllBids();
+                    pbjs.bidderSettings = {
+                      appnexus: {
+                        bidCpmAdjustment : function(bidCpm){
+                          return bidCpm * 0.66;
+                        }
+                      },
+                      openx: {
+                        bidCpmAdjustment : function(bidCpm){
+                          return bidCpm * 0.80;
+                        }
+                      }                      
+                    };
+
+                    pbjs.requestBids({
+                        bidsBackHandler: function (bids) {
+                            headerBidderBack('prebid');
+                        }
+                    });
+                });
+            }
+
+            requestBids(apstagSlots, adUnits, bidTimeout)
+            window.setTimeout(function() {
+                sendAdserverRequest();
+            }, bidTimeout);
+        };
+
+        fetchHeaderBids();
+
+        </script>
+<script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Product",
+            "name": "IOTA",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/32x32/1720.png",
+            
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1.02",
+                    "priceCurrency": "USD"
+                }
+            
+        }
+    </script>
+<link href="https://files.coinmarketcap.com/static/header_banner/header-banner.css" rel='stylesheet'>
+</head>
+<body>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MNVXW26" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+<script>
+            NightMode.init();
+        </script>
+<div id="header-banner-wrapper" style="display:none;overflow-x: hidden;">
+
+<div id='div-gpt-ad-1517714727704-0' class="centered">
+<script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1517714727704-0'); });
+            </script>
+</div>
+<div class="header-banner-close">X</div>
+</div>
+<script>
+            if (getCookie("header-banner-noshow") != "1") {
+                document.getElementById('header-banner-wrapper').style.display = 'block';
+            }
+        </script>
+<nav class="navbar mobile navbar-default visible-xs">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-navbar-dropdown" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<h2><a href="/" class="navbar-brand">CoinMarketCap</a></h2>
+</div>
+<div class="collapse navbar-collapse" id="mobile-navbar-dropdown">
+<ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Market Cap <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/">All</a></li>
+<li><a href="/coins/">Coins</a></li>
+<li><a href="/tokens/">Tokens</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trade Volume <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/currencies/volume/24-hour/">24 Hour Volume Rankings (Currency)</a></li>
+<li><a href="/exchanges/volume/24-hour/">24 Hour Volume Rankings (Exchange)</a></li>
+<li><a href="/currencies/volume/monthly/">Monthly Volume Rankings (Currency)</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trending <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/gainers-losers/">Gainers and Losers</a></li>
+<li><a href="/new/">Recently Added</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/charts/">Global Charts</a></li>
+<li><a href="/historical/">Historical Snapshots</a></li>
+<li><a href="/calculator/">Currency Converter Calculator</a></li>
+<li><a href="/widget/">Website Widgets</a></li>
+</ul>
+</li>
+</ul>
+<form action="/search/" class="navbar-form quick-search-container" role="search">
+<div class="form-group">
+<input type="text" class="form-control quick-search-box js-quick-search" placeholder="Search" name="q">
+<button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+</div>
+<div class="clearfix"></div>
+</form>
+<div class="navbar-text">
+<div class="btn-group">
+<button type="button" class="btn btn-xs dropdown-toggle language-dropdown" data-toggle="dropdown">
+<span data-language-dropdown>English</span> <span class="caret"></span>
+</button>
+<ul class="dropdown-menu language-dropdown-menu text-center" role="menu">
+<li class="pointer"><a href="/de/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="de">Deutsch</a></li>
+<li class="pointer"><a href="/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="en">English</a></li>
+<li class="pointer"><a href="/es/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="es">Español</a></li>
+<li class="pointer"><a href="/fil/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="fil">Filipino</a></li>
+<li class="pointer"><a href="/fr/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="fr">Français</a></li>
+<li class="pointer"><a href="/hi/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="hi">हिन्दी</a></li>
+<li class="pointer"><a href="/it/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="it">Italiano</a></li>
+<li class="pointer"><a href="/ja/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="ja">日本語</a></li>
+<li class="pointer"><a href="/ko/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="ko">한국어</a></li>
+<li class="pointer"><a href="/pt-br/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="pt-br">Português Brasil</a></li>
+<li class="pointer"><a href="/ru/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="ru">Русский</a></li>
+<li class="pointer"><a href="/vi/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="vi">Tiếng Việt</a></li>
+<li class="pointer"><a href="/zh/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="zh">简体中文</a></li>
+</ul>
+</div>
+<div data-global-currency-switch class="btn-group global-currency-dropdown-container">
+<button type="button" class="btn btn-xs dropdown-toggle global-currency-dropdown" data-toggle="dropdown">
+<span data-currency-display>USD</span> <span class="caret"></span>
+</button>
+<ul class="dropdown-menu global-currency-dropdown-menu text-center" role="menu">
+<li class="pointer"><a data-currency-toggle>USD</a></li>
+<li class="pointer"><a data-currency-toggle>DKK</a></li>
+<li class="pointer"><a data-currency-toggle>JPY</a></li>
+<li class="pointer"><a data-currency-toggle>PLN</a></li>
+<li class="pointer"><a data-currency-toggle>AUD</a></li>
+<li class="pointer"><a data-currency-toggle>EUR</a></li>
+<li class="pointer"><a data-currency-toggle>KRW</a></li>
+<li class="pointer"><a data-currency-toggle>RUB</a></li>
+<li class="pointer"><a data-currency-toggle>BRL</a></li>
+<li class="pointer"><a data-currency-toggle>GBP</a></li>
+<li class="pointer"><a data-currency-toggle>MXN</a></li>
+<li class="pointer"><a data-currency-toggle>SEK</a></li>
+<li class="pointer"><a data-currency-toggle>CAD</a></li>
+<li class="pointer"><a data-currency-toggle>HKD</a></li>
+<li class="pointer"><a data-currency-toggle>MYR</a></li>
+<li class="pointer"><a data-currency-toggle>SGD</a></li>
+<li class="pointer"><a data-currency-toggle>CHF</a></li>
+<li class="pointer"><a data-currency-toggle>HUF</a></li>
+<li class="pointer"><a data-currency-toggle>NOK</a></li>
+<li class="pointer"><a data-currency-toggle>THB</a></li>
+<li class="pointer"><a data-currency-toggle>CLP</a></li>
+<li class="pointer"><a data-currency-toggle>IDR</a></li>
+<li class="pointer"><a data-currency-toggle>NZD</a></li>
+<li class="pointer"><a data-currency-toggle>TRY</a></li>
+<li class="pointer"><a data-currency-toggle>CNY</a></li>
+<li class="pointer"><a data-currency-toggle>ILS</a></li>
+<li class="pointer"><a data-currency-toggle>PHP</a></li>
+<li class="pointer"><a data-currency-toggle>TWD</a></li>
+<li class="pointer"><a data-currency-toggle>CZK</a></li>
+<li class="pointer"><a data-currency-toggle>INR</a></li>
+<li class="pointer"><a data-currency-toggle>PKR</a></li>
+<li class="pointer"><a data-currency-toggle>ZAR</a></li>
+</ul>
+</div>
+</div>
+<p class="navbar-text">
+<a href="https://www.facebook.com/CoinMarketCap" target="_blank"><img src="https://s2.coinmarketcap.com/static/cloud/img/facebook_logo.png" alt="twitter" class="icon-social" /></a>
+&hairsp;
+<a href="https://twitter.com/CoinMarketCap" target="_blank"><img src="https://s2.coinmarketcap.com/static/cloud/img/twitter_logo.png" alt="twitter" class="icon-social" /></a>
+</p>
+</div>
+</div>
+</nav>
+<div class="global-stats mobile visible-xs" data-global-stats-container>
+<ul class="list-group">
+<li class="list-group-item">
+Market Cap: <strong><a href="/charts/"><span data-global-stats-market-cap data-global-currency-market-cap></span></a></strong>
+<button class="pull-right dropdown-toggle" data-toggle="collapse" data-target="#global-stats-mobile" aria-expanded="false" aria-controls="global-stats-mobile"><span class="caret"></span></button>
+</li>
+</ul>
+<div id="global-stats-mobile" class="collapse">
+<ul class="list-group">
+<li class="list-group-item">24h Vol: <strong><a href="/charts/"><span data-global-stats-volume data-global-currency-volume></span></a></strong></li>
+<li class="list-group-item">BTC Dominance: <strong><a href="/charts/#dominance-percentage"><span data-global-stats-btc-dominance></span>%</a></strong></li>
+<li class="list-group-item">Cryptocurrencies: <strong><a href="/all/views/all/"><span data-global-stats-cryptocurrencies></span></a></strong></li>
+<li class="list-group-item">Markets: <strong><a href="/currencies/volume/24-hour/"><span data-global-stats-markets></span></a></strong></li>
+</ul>
+</div>
+</div>
+<div class="outer-container global-stats desktop hidden-xs">
+<div class="container global-stats desktop">
+<div class="row">
+<div class="col-sm-3">
+<ul class="list-inline stat-counters hidden" data-global-stats-container>
+<li>Cryptocurrencies: <strong><a href="/all/views/all/"><span data-global-stats-cryptocurrencies></span></a></strong></li>
+<li>/ Markets: <strong><a href="/currencies/volume/24-hour/"><span data-global-stats-markets></span></a></strong></li>
+</ul>
+</div>
+<div class="col-sm-6 text-center">
+<ul class="list-inline stat-counters hidden" data-global-stats-container>
+<li>Market Cap: <strong><a href="/charts/"><span data-global-stats-market-cap data-global-currency-market-cap></span></a></strong></li>
+<li> / 24h Vol: <strong><a href="/charts/"><span data-global-stats-volume data-global-currency-volume></span></a></strong> / BTC Dominance: <strong><a href="/charts/#dominance-percentage"><span data-global-stats-btc-dominance></span>%</a></strong></li>
+</ul>
+</div>
+<div class="col-sm-3 text-right">
+<div class="btn-group">
+<button type="button" class="btn btn-xs dropdown-toggle language-dropdown" data-toggle="dropdown">
+<span data-language-dropdown>English</span> <span class="caret"></span>
+</button>
+<ul class="dropdown-menu language-dropdown-menu text-center" role="menu">
+<li class="pointer"><a href="/de/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="de">Deutsch</a></li>
+<li class="pointer"><a href="/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="en">English</a></li>
+<li class="pointer"><a href="/es/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="es">Español</a></li>
+<li class="pointer"><a href="/fil/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="fil">Filipino</a></li>
+<li class="pointer"><a href="/fr/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="fr">Français</a></li>
+<li class="pointer"><a href="/hi/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="hi">हिन्दी</a></li>
+<li class="pointer"><a href="/it/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="it">Italiano</a></li>
+<li class="pointer"><a href="/ja/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="ja">日本語</a></li>
+<li class="pointer"><a href="/ko/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="ko">한국어</a></li>
+<li class="pointer"><a href="/pt-br/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="pt-br">Português Brasil</a></li>
+<li class="pointer"><a href="/ru/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="ru">Русский</a></li>
+<li class="pointer"><a href="/vi/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="vi">Tiếng Việt</a></li>
+<li class="pointer"><a href="/zh/currencies/iota/historical-data/?start=20180101&amp;end=20180330" data-language-toggle="zh">简体中文</a></li>
+</ul>
+</div>
+<div data-global-currency-switch class="btn-group global-currency-dropdown-container">
+<button type="button" class="btn btn-xs dropdown-toggle global-currency-dropdown" data-toggle="dropdown">
+<span data-currency-display>USD</span> <span class="caret"></span>
+</button>
+<ul class="dropdown-menu global-currency-dropdown-menu text-center" role="menu">
+<li class="pointer"><a data-currency-toggle>USD</a></li>
+<li class="pointer"><a data-currency-toggle>DKK</a></li>
+<li class="pointer"><a data-currency-toggle>JPY</a></li>
+<li class="pointer"><a data-currency-toggle>PLN</a></li>
+<li class="pointer"><a data-currency-toggle>AUD</a></li>
+<li class="pointer"><a data-currency-toggle>EUR</a></li>
+<li class="pointer"><a data-currency-toggle>KRW</a></li>
+<li class="pointer"><a data-currency-toggle>RUB</a></li>
+<li class="pointer"><a data-currency-toggle>BRL</a></li>
+<li class="pointer"><a data-currency-toggle>GBP</a></li>
+<li class="pointer"><a data-currency-toggle>MXN</a></li>
+<li class="pointer"><a data-currency-toggle>SEK</a></li>
+<li class="pointer"><a data-currency-toggle>CAD</a></li>
+<li class="pointer"><a data-currency-toggle>HKD</a></li>
+<li class="pointer"><a data-currency-toggle>MYR</a></li>
+<li class="pointer"><a data-currency-toggle>SGD</a></li>
+<li class="pointer"><a data-currency-toggle>CHF</a></li>
+<li class="pointer"><a data-currency-toggle>HUF</a></li>
+<li class="pointer"><a data-currency-toggle>NOK</a></li>
+<li class="pointer"><a data-currency-toggle>THB</a></li>
+<li class="pointer"><a data-currency-toggle>CLP</a></li>
+<li class="pointer"><a data-currency-toggle>IDR</a></li>
+<li class="pointer"><a data-currency-toggle>NZD</a></li>
+<li class="pointer"><a data-currency-toggle>TRY</a></li>
+<li class="pointer"><a data-currency-toggle>CNY</a></li>
+<li class="pointer"><a data-currency-toggle>ILS</a></li>
+<li class="pointer"><a data-currency-toggle>PHP</a></li>
+<li class="pointer"><a data-currency-toggle>TWD</a></li>
+<li class="pointer"><a data-currency-toggle>CZK</a></li>
+<li class="pointer"><a data-currency-toggle>INR</a></li>
+<li class="pointer"><a data-currency-toggle>PKR</a></li>
+<li class="pointer"><a data-currency-toggle>ZAR</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-10">
+<div id="title" class="hidden-xs"><a href="/">Cryptocurrency Market Capitalizations</a></div>
+<hr class="divider-under-title" />
+<div id="leaderboard" class="text-center">
+
+<div id='div-gpt-ad-1488495260324-9' class="centered leaderboard">
+<script>
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1488495260324-9'); });
+                                    </script>
+</div>
+</div>
+
+<nav class="navbar desktop navbar-default hidden-xs">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Market Cap <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="/">All</a></li>
+<li><a href="/coins/">Coins</a></li>
+<li><a href="/tokens/">Tokens</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Trade Volume <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="/currencies/volume/24-hour/">24 Hour Volume Rankings (Currency)</a></li>
+<li><a href="/exchanges/volume/24-hour/">24 Hour Volume Rankings (Exchange)</a></li>
+<li><a href="/currencies/volume/monthly/">Monthly Volume Rankings (Currency)</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Trending <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="/gainers-losers/">Gainers and Losers</a></li>
+<li><a href="/new/">Recently Added</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="/charts/">Global Charts</a></li>
+<li><a href="/historical/">Historical Snapshots</a></li>
+<li><a href="/calculator/">Currency Converter Calculator</a></li>
+<li><a href="/widget/">Website Widgets</a></li>
+</ul>
+</li>
+</ul>
+<form action="/search/" class="navbar-form navbar-right quick-search-container" role="search">
+<div class="form-group">
+<input type="text" class="form-control quick-search-box js-quick-search" placeholder="Search" name="q">
+</div>
+<button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+</form>
+<div class="bottom-margin-1x hidden-sm hidden-md hidden-lg"></div>
+</div>
+</nav>
+<div class="row bottom-margin-1x">
+<div class="col-xs-6 col-sm-4 col-md-4">
+<h1 class="text-large">
+<img src="https://s2.coinmarketcap.com/static/img/coins/32x32/1720.png" class="currency-logo-32x32" alt="IOTA">
+<small class="bold hidden-sm hidden-md hidden-lg">(MIOTA)</small>
+<span class="clearfix visible-xs"></span>
+IOTA
+<small class="bold hidden-xs">(MIOTA)</small>
+</h1>
+</div>
+<div class="col-xs-6 col-sm-8 col-md-4 text-left">
+<span id="quote_price" data-currency-price data-usd="1.0233">
+<span class="text-large2" data-currency-value>1.02</span>
+<span class="details-text-medium" data-currency-code>USD</span>
+</span>
+<span class="text-large2  positive_change ">
+(<span data-format-percentage data-format-value="1.69638">1.70</span>%)
+</span>
+<br>
+<span class="text-gray details-text-medium">
+<span data-format-price-crypto data-format-value="0.000146544">
+0.00014654
+</span>
+BTC
+</span>
+<span class="details-text-medium  positive_change ">
+(<span data-format-percentage data-format-value="0.458687">0.46</span>%)
+</span>
+</div>
+<div class="col-xs-push-6 col-sm-push-4 col-md-push-0 col-md-4 text-left">
+
+<div id='div-gpt-ad-1520101567641-0'>
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1520101567641-0'); });
+            </script>
+</div>
+</div>
+</div>
+<div class="row bottom-margin-2x">
+<div class="col-sm-8 col-sm-push-4">
+<div class="coin-summary-item col-xs-6  col-md-3">
+<div class="coin-summary-item-header">
+<h3 class="details-text-medium">Market Cap</h3>
+</div>
+<div class="coin-summary-item-detail details-text-medium">
+<span data-currency-market-cap data-usd="2844293338.59">
+<span data-currency-value>2,844,293,339</span>
+<span data-currency-code>USD</span>
+</span><br>
+<span class="text-gray">
+<span data-format-market-cap data-format-value="407323.485792">
+407,323
+</span>
+BTC
+<br>
+</span>
+</div>
+</div>
+<div class="coin-summary-item col-xs-6  col-md-3">
+<div class="coin-summary-item-header">
+<h3 class="details-text-medium">Volume (24h)</h3>
+</div>
+<div class="coin-summary-item-detail details-text-medium">
+<span data-currency-volume data-usd="26453800.0">
+<span data-currency-value>26,453,800</span>
+<span data-currency-code>USD</span>
+</span><br>
+<span class="text-gray">
+<span data-format-volume-crypto data-format-value="3788.38">
+3,788
+</span>
+BTC
+</span>
+</div>
+</div>
+<div class="vertical-spacer col-xs-12 hidden-md hidden-lg"></div>
+<div class="coin-summary-item col-xs-6  col-md-3">
+<div class="coin-summary-item-header">
+<h3 class="details-text-medium">Circulating Supply</h3>
+</div>
+<div class="coin-summary-item-detail details-text-medium">
+<span data-format-supply data-format-value="2779530283.0">
+2,779,530,283
+</span>
+MIOTA
+</div>
+</div>
+<div class="coin-summary-item col-xs-6  col-md-3 ">
+<div class="coin-summary-item-header">
+<h3 class="details-text-medium">Max Supply</h3>
+</div>
+<div class="coin-summary-item-detail details-text-medium">
+<span data-format-supply data-format-value="2779530283">
+2,779,530,283
+</span>
+MIOTA
+</div>
+</div>
+<div class="clearfix visible-xs"></div>
+</div>
+<div class="col-sm-4 col-sm-pull-8">
+<ul class="list-unstyled">
+<li><span class="glyphicon glyphicon-link text-gray" title="Website"></span> <a href="https://iota.org/" target="_blank" rel="noopener">Website</a></li>
+<li><span class="glyphicon glyphicon-bullhorn text-gray" title="Announcement"></span> <a href="https://bitcointalk.org/index.php?topic=1216479.0" target="_blank" rel="noopener">Announcement</a></li>
+<li><span class="glyphicon glyphicon-search text-gray" title="Explorer"></span> <a href="https://thetangle.org/" target="_blank" rel="noopener">Explorer</a></li>
+<li><span class="glyphicon glyphicon-search text-gray" title="Explorer"></span> <a href="https://iotasear.ch/" target="_blank" rel="noopener">Explorer 2</a></li>
+<li><span class="glyphicon glyphicon-list text-gray" title="Message Board"></span> <a href="https://forum.iota.org" target="_blank" rel="noopener">Message Board</a></li>
+<li><span class="glyphicon glyphicon-globe text-gray" title="Chat"></span> <a href="https://discord.gg/7Gu2mG5" target="_blank" rel="noopener">Chat</a></li>
+<li><span class="glyphicon glyphicon-hdd text-gray" title="Source Code"></span> <a href="https://github.com/iotaledger" target="_blank" rel="noopener">Source Code</a></li>
+<li><span class="glyphicon glyphicon glyphicon-star text-gray" title="Rank"></span>
+<small><span class="label label-success"> Rank 10</span></small>
+</li>
+<li><span class="glyphicon glyphicon glyphicon-tag text-gray" title="Tags"></span>
+<small>
+<span class="label label-warning">Coin</span>
+</small>
+</li>
+</ul>
+</div>
+</div>
+<div class="row bottom-margin-1x">
+<div class="col-xs-12">
+<ul class="nav nav-tabs text-left" role="tablist">
+<li><a href="/currencies/iota/#charts"> <span class="glyphicon glyphicon-stats text-gray"></span> Charts</a></li>
+<li><a href="/currencies/iota/#markets"><span class="glyphicon glyphicon-transfer text-gray"></span> Markets</a></li>
+<li><a href="/currencies/iota/#social"><span class="glyphicon glyphicon-globe text-gray"></span> Social</a></li>
+<li><a href="/currencies/iota/#tools"><span class="glyphicon glyphicon-wrench text-gray"></span> Tools</a></li>
+<li class="active"><a href="/currencies/iota/historical-data/"><span class="glyphicon glyphicon-calendar text-gray"></span> Historical Data</a></li>
+</ul>
+</div>
+<div class="col-xs-12 tab-content">
+<div id="historical-data" class="tab-pane active">
+<div class="tab-header">
+<h2 class="pull-left bottom-margin-2x">Historical data for IOTA</h2>
+<div class="clear"></div>
+<div class="row">
+<div class="col-md-12">
+<div class="pull-left">
+<small>Currency in USD</small> <br>
+<small>Open/Close in UTC time</small>
+</div>
+<div id="reportrange" class="pull-right">
+<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+<span></span> <b class="caret"></b>
+</div>
+</div>
+</div>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th class="text-left">Date</th>
+<th class="text-right">Open</th>
+<th class="text-right">High</th>
+<th class="text-right">Low</th>
+<th class="text-right">Close</th>
+<th class="text-right">Volume</th>
+<th class="text-right">Market Cap</th>
+</tr>
+</thead>
+<tbody>
+<tr class="text-right">
+<td class="text-left">Mar 30, 2018</td>
+<td data-format-fiat data-format-value="1.09189">1.09</td>
+<td data-format-fiat data-format-value="1.13699">1.14</td>
+<td data-format-fiat data-format-value="1.05005">1.05</td>
+<td data-format-fiat data-format-value="1.11066">1.11</td>
+<td data-format-market-cap data-format-value="37597100.0">37,597,100</td>
+<td data-format-market-cap data-format-value="3034950000.0">3,034,950,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 29, 2018</td>
+<td data-format-fiat data-format-value="1.19279">1.19</td>
+<td data-format-fiat data-format-value="1.19281">1.19</td>
+<td data-format-fiat data-format-value="1.07143">1.07</td>
+<td data-format-fiat data-format-value="1.09314">1.09</td>
+<td data-format-market-cap data-format-value="38707000.0">38,707,000</td>
+<td data-format-market-cap data-format-value="3315390000.0">3,315,390,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 28, 2018</td>
+<td data-format-fiat data-format-value="1.17238">1.17</td>
+<td data-format-fiat data-format-value="1.24165">1.24</td>
+<td data-format-fiat data-format-value="1.16486">1.16</td>
+<td data-format-fiat data-format-value="1.19231">1.19</td>
+<td data-format-market-cap data-format-value="24150200.0">24,150,200</td>
+<td data-format-market-cap data-format-value="3258650000.0">3,258,650,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 27, 2018</td>
+<td data-format-fiat data-format-value="1.23455">1.23</td>
+<td data-format-fiat data-format-value="1.23958">1.24</td>
+<td data-format-fiat data-format-value="1.15557">1.16</td>
+<td data-format-fiat data-format-value="1.17353">1.17</td>
+<td data-format-market-cap data-format-value="29726700.0">29,726,700</td>
+<td data-format-market-cap data-format-value="3431480000.0">3,431,480,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 26, 2018</td>
+<td data-format-fiat data-format-value="1.32232">1.32</td>
+<td data-format-fiat data-format-value="1.32678">1.33</td>
+<td data-format-fiat data-format-value="1.18172">1.18</td>
+<td data-format-fiat data-format-value="1.23654">1.24</td>
+<td data-format-market-cap data-format-value="32849900.0">32,849,900</td>
+<td data-format-market-cap data-format-value="3675430000.0">3,675,430,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 25, 2018</td>
+<td data-format-fiat data-format-value="1.31462">1.31</td>
+<td data-format-fiat data-format-value="1.34993">1.35</td>
+<td data-format-fiat data-format-value="1.27878">1.28</td>
+<td data-format-fiat data-format-value="1.32144">1.32</td>
+<td data-format-market-cap data-format-value="26291200.0">26,291,200</td>
+<td data-format-market-cap data-format-value="3654020000.0">3,654,020,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 24, 2018</td>
+<td data-format-fiat data-format-value="1.3537">1.35</td>
+<td data-format-fiat data-format-value="1.40599">1.41</td>
+<td data-format-fiat data-format-value="1.32555">1.33</td>
+<td data-format-fiat data-format-value="1.32574">1.33</td>
+<td data-format-market-cap data-format-value="29655100.0">29,655,100</td>
+<td data-format-market-cap data-format-value="3762660000.0">3,762,660,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 23, 2018</td>
+<td data-format-fiat data-format-value="1.32543">1.33</td>
+<td data-format-fiat data-format-value="1.33656">1.34</td>
+<td data-format-fiat data-format-value="1.25482">1.25</td>
+<td data-format-fiat data-format-value="1.33656">1.34</td>
+<td data-format-market-cap data-format-value="30507500.0">30,507,500</td>
+<td data-format-market-cap data-format-value="3684080000.0">3,684,080,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 22, 2018</td>
+<td data-format-fiat data-format-value="1.36992">1.37</td>
+<td data-format-fiat data-format-value="1.41283">1.41</td>
+<td data-format-fiat data-format-value="1.26819">1.27</td>
+<td data-format-fiat data-format-value="1.32637">1.33</td>
+<td data-format-market-cap data-format-value="35665500.0">35,665,500</td>
+<td data-format-market-cap data-format-value="3807750000.0">3,807,750,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 21, 2018</td>
+<td data-format-fiat data-format-value="1.45241">1.45</td>
+<td data-format-fiat data-format-value="1.49427">1.49</td>
+<td data-format-fiat data-format-value="1.34352">1.34</td>
+<td data-format-fiat data-format-value="1.37121">1.37</td>
+<td data-format-market-cap data-format-value="57554800.0">57,554,800</td>
+<td data-format-market-cap data-format-value="4037020000.0">4,037,020,000</td>
+ </tr>
+<tr class="text-right">
+<td class="text-left">Mar 20, 2018</td>
+<td data-format-fiat data-format-value="1.33031">1.33</td>
+<td data-format-fiat data-format-value="1.5183">1.52</td>
+<td data-format-fiat data-format-value="1.29681">1.30</td>
+<td data-format-fiat data-format-value="1.43577">1.44</td>
+<td data-format-market-cap data-format-value="67039500.0">67,039,500</td>
+<td data-format-market-cap data-format-value="3697640000.0">3,697,640,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 19, 2018</td>
+<td data-format-fiat data-format-value="1.23679">1.24</td>
+<td data-format-fiat data-format-value="1.34095">1.34</td>
+<td data-format-fiat data-format-value="1.18578">1.19</td>
+<td data-format-fiat data-format-value="1.32987">1.33</td>
+<td data-format-market-cap data-format-value="55966600.0">55,966,600</td>
+<td data-format-market-cap data-format-value="3437690000.0">3,437,690,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 18, 2018</td>
+<td data-format-fiat data-format-value="1.14011">1.14</td>
+<td data-format-fiat data-format-value="1.29044">1.29</td>
+<td data-format-fiat data-format-value="1.06433">1.06</td>
+<td data-format-fiat data-format-value="1.22599">1.23</td>
+<td data-format-market-cap data-format-value="111700000.0">111,700,000</td>
+<td data-format-market-cap data-format-value="3168980000.0">3,168,980,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 17, 2018</td>
+<td data-format-fiat data-format-value="1.10333">1.10</td>
+<td data-format-fiat data-format-value="1.15073">1.15</td>
+<td data-format-fiat data-format-value="1.067">1.07</td>
+<td data-format-fiat data-format-value="1.14274">1.14</td>
+<td data-format-market-cap data-format-value="38853100.0">38,853,100</td>
+<td data-format-market-cap data-format-value="3066750000.0">3,066,750,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 16, 2018</td>
+<td data-format-fiat data-format-value="1.10145">1.10</td>
+<td data-format-fiat data-format-value="1.14993">1.15</td>
+<td data-format-fiat data-format-value="1.03356">1.03</td>
+<td data-format-fiat data-format-value="1.10112">1.10</td>
+<td data-format-market-cap data-format-value="29977700.0">29,977,700</td>
+<td data-format-market-cap data-format-value="3061520000.0">3,061,520,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 15, 2018</td>
+<td data-format-fiat data-format-value="1.12236">1.12</td>
+<td data-format-fiat data-format-value="1.13706">1.14</td>
+<td data-format-fiat data-format-value="1.04366">1.04</td>
+<td data-format-fiat data-format-value="1.09204">1.09</td>
+<td data-format-market-cap data-format-value="43235400.0">43,235,400</td>
+<td data-format-market-cap data-format-value="3119630000.0">3,119,630,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 14, 2018</td>
+<td data-format-fiat data-format-value="1.30976">1.31</td>
+<td data-format-fiat data-format-value="1.36576">1.37</td>
+<td data-format-fiat data-format-value="1.1064">1.11</td>
+<td data-format-fiat data-format-value="1.12471">1.12</td>
+<td data-format-market-cap data-format-value="45727000.0">45,727,000</td>
+<td data-format-market-cap data-format-value="3640500000.0">3,640,500,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 13, 2018</td>
+<td data-format-fiat data-format-value="1.33575">1.34</td>
+<td data-format-fiat data-format-value="1.35029">1.35</td>
+<td data-format-fiat data-format-value="1.28845">1.29</td>
+<td data-format-fiat data-format-value="1.31122">1.31</td>
+<td data-format-market-cap data-format-value="22675600.0">22,675,600</td>
+<td data-format-market-cap data-format-value="3712760000.0">3,712,760,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 12, 2018</td>
+<td data-format-fiat data-format-value="1.39013">1.39</td>
+<td data-format-fiat data-format-value="1.42293">1.42</td>
+<td data-format-fiat data-format-value="1.28057">1.28</td>
+<td data-format-fiat data-format-value="1.33856">1.34</td>
+<td data-format-market-cap data-format-value="27739400.0">27,739,400</td>
+<td data-format-market-cap data-format-value="3863920000.0">3,863,920,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 11, 2018</td>
+<td data-format-fiat data-format-value="1.30584">1.31</td>
+<td data-format-fiat data-format-value="1.43093">1.43</td>
+<td data-format-fiat data-format-value="1.27515">1.28</td>
+<td data-format-fiat data-format-value="1.38945">1.39</td>
+<td data-format-market-cap data-format-value="31315700.0">31,315,700</td>
+<td data-format-market-cap data-format-value="3629610000.0">3,629,610,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 10, 2018</td>
+<td data-format-fiat data-format-value="1.40035">1.40</td>
+<td data-format-fiat data-format-value="1.47426">1.47</td>
+<td data-format-fiat data-format-value="1.2891">1.29</td>
+<td data-format-fiat data-format-value="1.3082">1.31</td>
+<td data-format-market-cap data-format-value="31847500.0">31,847,500</td>
+<td data-format-market-cap data-format-value="3892330000.0">3,892,330,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 09, 2018</td>
+<td data-format-fiat data-format-value="1.39631">1.40</td>
+<td data-format-fiat data-format-value="1.40696">1.41</td>
+<td data-format-fiat data-format-value="1.19814">1.20</td>
+<td data-format-fiat data-format-value="1.39453">1.39</td>
+<td data-format-market-cap data-format-value="58591300.0">58,591,300</td>
+<td data-format-market-cap data-format-value="3881080000.0">3,881,080,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 08, 2018</td>
+<td data-format-fiat data-format-value="1.53145">1.53</td>
+<td data-format-fiat data-format-value="1.54624">1.55</td>
+<td data-format-fiat data-format-value="1.38995">1.39</td>
+<td data-format-fiat data-format-value="1.39706">1.40</td>
+<td data-format-market-cap data-format-value="35024800.0">35,024,800</td>
+<td data-format-market-cap data-format-value="4256700000.0">4,256,700,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 07, 2018</td>
+<td data-format-fiat data-format-value="1.69881">1.70</td>
+<td data-format-fiat data-format-value="1.71324">1.71</td>
+<td data-format-fiat data-format-value="1.38215">1.38</td>
+<td data-format-fiat data-format-value="1.53037">1.53</td>
+<td data-format-market-cap data-format-value="68445500.0">68,445,500</td>
+<td data-format-market-cap data-format-value="4721900000.0">4,721,900,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 06, 2018</td>
+<td data-format-fiat data-format-value="1.87129">1.87</td>
+<td data-format-fiat data-format-value="1.89288">1.89</td>
+<td data-format-fiat data-format-value="1.65954">1.66</td>
+<td data-format-fiat data-format-value="1.69917">1.70</td>
+<td data-format-market-cap data-format-value="61796200.0">61,796,200</td>
+<td data-format-market-cap data-format-value="5201320000.0">5,201,320,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 05, 2018</td>
+<td data-format-fiat data-format-value="1.89681">1.90</td>
+<td data-format-fiat data-format-value="1.90326">1.90</td>
+<td data-format-fiat data-format-value="1.8556">1.86</td>
+<td data-format-fiat data-format-value="1.87734">1.88</td>
+<td data-format-market-cap data-format-value="24413600.0">24,413,600</td>
+<td data-format-market-cap data-format-value="5272230000.0">5,272,230,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 04, 2018</td>
+<td data-format-fiat data-format-value="1.86333">1.86</td>
+<td data-format-fiat data-format-value="1.9094">1.91</td>
+<td data-format-fiat data-format-value="1.81256">1.81</td>
+<td data-format-fiat data-format-value="1.8944">1.89</td>
+<td data-format-market-cap data-format-value="28452300.0">28,452,300</td>
+<td data-format-market-cap data-format-value="5179190000.0">5,179,190,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 03, 2018</td>
+<td data-format-fiat data-format-value="1.90866">1.91</td>
+<td data-format-fiat data-format-value="1.95541">1.96</td>
+<td data-format-fiat data-format-value="1.84742">1.85</td>
+<td data-format-fiat data-format-value="1.86367">1.86</td>
+<td data-format-market-cap data-format-value="25861200.0">25,861,200</td>
+<td data-format-market-cap data-format-value="5305170000.0">5,305,170,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 02, 2018</td>
+<td data-format-fiat data-format-value="1.98156">1.98</td>
+<td data-format-fiat data-format-value="2.00761">2.01</td>
+<td data-format-fiat data-format-value="1.8643">1.86</td>
+<td data-format-fiat data-format-value="1.91623">1.92</td>
+<td data-format-market-cap data-format-value="27602600.0">27,602,600</td>
+<td data-format-market-cap data-format-value="5507790000.0">5,507,790,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Mar 01, 2018</td>
+<td data-format-fiat data-format-value="1.85381">1.85</td>
+<td data-format-fiat data-format-value="2.00775">2.01</td>
+<td data-format-fiat data-format-value="1.83843">1.84</td>
+<td data-format-fiat data-format-value="1.96963">1.97</td>
+<td data-format-market-cap data-format-value="41523600.0">41,523,600</td>
+<td data-format-market-cap data-format-value="5152710000.0">5,152,710,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 28, 2018</td>
+<td data-format-fiat data-format-value="1.97096">1.97</td>
+<td data-format-fiat data-format-value="2.02299">2.02</td>
+<td data-format-fiat data-format-value="1.85132">1.85</td>
+<td data-format-fiat data-format-value="1.85653">1.86</td>
+<td data-format-market-cap data-format-value="39190300.0">39,190,300</td>
+<td data-format-market-cap data-format-value="5478340000.0">5,478,340,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 27, 2018</td>
+<td data-format-fiat data-format-value="1.87714">1.88</td>
+<td data-format-fiat data-format-value="2.07589">2.08</td>
+<td data-format-fiat data-format-value="1.81849">1.82</td>
+<td data-format-fiat data-format-value="1.9739">1.97</td>
+<td data-format-market-cap data-format-value="63311700.0">63,311,700</td>
+<td data-format-market-cap data-format-value="5217570000.0">5,217,570,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 26, 2018</td>
+<td data-format-fiat data-format-value="1.81667">1.82</td>
+<td data-format-fiat data-format-value="1.90446">1.90</td>
+<td data-format-fiat data-format-value="1.77316">1.77</td>
+<td data-format-fiat data-format-value="1.86804">1.87</td>
+<td data-format-market-cap data-format-value="43478500.0">43,478,500</td>
+<td data-format-market-cap data-format-value="5049480000.0">5,049,480,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 25, 2018</td>
+<td data-format-fiat data-format-value="1.76889">1.77</td>
+<td data-format-fiat data-format-value="1.97891">1.98</td>
+<td data-format-fiat data-format-value="1.75071">1.75</td>
+<td data-format-fiat data-format-value="1.81591">1.82</td>
+<td data-format-market-cap data-format-value="103799000.0">103,799,000</td>
+<td data-format-market-cap data-format-value="4916700000.0">4,916,700,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 24, 2018</td>
+<td data-format-fiat data-format-value="1.75134">1.75</td>
+<td data-format-fiat data-format-value="1.80402">1.80</td>
+<td data-format-fiat data-format-value="1.64927">1.65</td>
+<td data-format-fiat data-format-value="1.77601">1.78</td>
+<td data-format-market-cap data-format-value="41594100.0">41,594,100</td>
+<td data-format-market-cap data-format-value="4867920000.0">4,867,920,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 23, 2018</td>
+<td data-format-fiat data-format-value="1.61185">1.61</td>
+<td data-format-fiat data-format-value="1.814">1.81</td>
+<td data-format-fiat data-format-value="1.57968">1.58</td>
+<td data-format-fiat data-format-value="1.75221">1.75</td>
+<td data-format-market-cap data-format-value="39323100.0">39,323,100</td>
+<td data-format-market-cap data-format-value="4480180000.0">4,480,180,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 22, 2018</td>
+<td data-format-fiat data-format-value="1.75033">1.75</td>
+<td data-format-fiat data-format-value="1.85883">1.86</td>
+<td data-format-fiat data-format-value="1.57955">1.58</td>
+<td data-format-fiat data-format-value="1.62497">1.62</td>
+<td data-format-market-cap data-format-value="53125800.0">53,125,800</td>
+<td data-format-market-cap data-format-value="4865110000.0">4,865,110,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 21, 2018</td>
+<td data-format-fiat data-format-value="1.89636">1.90</td>
+<td data-format-fiat data-format-value="1.95983">1.96</td>
+<td data-format-fiat data-format-value="1.73908">1.74</td>
+<td data-format-fiat data-format-value="1.75687">1.76</td>
+<td data-format-market-cap data-format-value="50765900.0">50,765,900</td>
+<td data-format-market-cap data-format-value="5270980000.0">5,270,980,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 20, 2018</td>
+<td data-format-fiat data-format-value="2.08687">2.09</td>
+<td data-format-fiat data-format-value="2.1172">2.12</td>
+<td data-format-fiat data-format-value="1.88017">1.88</td>
+<td data-format-fiat data-format-value="1.91218">1.91</td>
+<td data-format-market-cap data-format-value="49930400.0">49,930,400</td>
+<td data-format-market-cap data-format-value="5800510000.0">5,800,510,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 19, 2018</td>
+<td data-format-fiat data-format-value="1.98653">1.99</td>
+<td data-format-fiat data-format-value="2.14367">2.14</td>
+<td data-format-fiat data-format-value="1.98653">1.99</td>
+<td data-format-fiat data-format-value="2.08502">2.09</td>
+<td data-format-market-cap data-format-value="32581400.0">32,581,400</td>
+<td data-format-market-cap data-format-value="5521610000.0">5,521,610,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 18, 2018</td>
+<td data-format-fiat data-format-value="2.20239">2.20</td>
+<td data-format-fiat data-format-value="2.21174">2.21</td>
+<td data-format-fiat data-format-value="1.98179">1.98</td>
+<td data-format-fiat data-format-value="1.98179">1.98</td>
+<td data-format-market-cap data-format-value="43653800.0">43,653,800</td>
+<td data-format-market-cap data-format-value="6121620000.0">6,121,620,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 17, 2018</td>
+<td data-format-fiat data-format-value="2.10184">2.10</td>
+<td data-format-fiat data-format-value="2.20937">2.21</td>
+<td data-format-fiat data-format-value="2.08218">2.08</td>
+<td data-format-fiat data-format-value="2.19649">2.20</td>
+<td data-format-market-cap data-format-value="42149700.0">42,149,700</td>
+<td data-format-market-cap data-format-value="5842140000.0">5,842,140,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 16, 2018</td>
+<td data-format-fiat data-format-value="2.12069">2.12</td>
+<td data-format-fiat data-format-value="2.1765">2.18</td>
+<td data-format-fiat data-format-value="2.00023">2.00</td>
+<td data-format-fiat data-format-value="2.10395">2.10</td>
+<td data-format-market-cap data-format-value="44770200.0">44,770,200</td>
+<td data-format-market-cap data-format-value="5894520000.0">5,894,520,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 15, 2018</td>
+<td data-format-fiat data-format-value="2.02745">2.03</td>
+<td data-format-fiat data-format-value="2.16878">2.17</td>
+<td data-format-fiat data-format-value="1.99795">2.00</td>
+<td data-format-fiat data-format-value="2.12576">2.13</td>
+<td data-format-market-cap data-format-value="65315300.0">65,315,300</td>
+<td data-format-market-cap data-format-value="5635360000.0">5,635,360,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 14, 2018</td>
+<td data-format-fiat data-format-value="1.81774">1.82</td>
+<td data-format-fiat data-format-value="2.03473">2.03</td>
+<td data-format-fiat data-format-value="1.79329">1.79</td>
+<td data-format-fiat data-format-value="2.03197">2.03</td>
+<td data-format-market-cap data-format-value="53007600.0">53,007,600</td>
+<td data-format-market-cap data-format-value="5052450000.0">5,052,450,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 13, 2018</td>
+<td data-format-fiat data-format-value="1.87499">1.87</td>
+<td data-format-fiat data-format-value="1.87499">1.87</td>
+<td data-format-fiat data-format-value="1.75116">1.75</td>
+<td data-format-fiat data-format-value="1.81462">1.81</td>
+<td data-format-market-cap data-format-value="30056900.0">30,056,900</td>
+<td data-format-market-cap data-format-value="5211600000.0">5,211,600,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 12, 2018</td>
+<td data-format-fiat data-format-value="1.71388">1.71</td>
+<td data-format-fiat data-format-value="1.90614">1.91</td>
+<td data-format-fiat data-format-value="1.71388">1.71</td>
+<td data-format-fiat data-format-value="1.87086">1.87</td>
+<td data-format-market-cap data-format-value="36974300.0">36,974,300</td>
+<td data-format-market-cap data-format-value="4763780000.0">4,763,780,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 11, 2018</td>
+<td data-format-fiat data-format-value="1.85829">1.86</td>
+<td data-format-fiat data-format-value="1.85829">1.86</td>
+<td data-format-fiat data-format-value="1.62157">1.62</td>
+<td data-format-fiat data-format-value="1.70193">1.70</td>
+<td data-format-market-cap data-format-value="45356200.0">45,356,200</td>
+<td data-format-market-cap data-format-value="5165180000.0">5,165,180,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 10, 2018</td>
+<td data-format-fiat data-format-value="1.95642">1.96</td>
+<td data-format-fiat data-format-value="2.12502">2.13</td>
+<td data-format-fiat data-format-value="1.78529">1.79</td>
+<td data-format-fiat data-format-value="1.86046">1.86</td>
+<td data-format-market-cap data-format-value="68051900.0">68,051,900</td>
+<td data-format-market-cap data-format-value="5437920000.0">5,437,920,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 09, 2018</td>
+<td data-format-fiat data-format-value="1.78221">1.78</td>
+<td data-format-fiat data-format-value="1.9656">1.97</td>
+<td data-format-fiat data-format-value="1.69843">1.70</td>
+<td data-format-fiat data-format-value="1.95811">1.96</td>
+<td data-format-market-cap data-format-value="45992000.0">45,992,000</td>
+<td data-format-market-cap data-format-value="4953720000.0">4,953,720,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 08, 2018</td>
+<td data-format-fiat data-format-value="1.61023">1.61</td>
+<td data-format-fiat data-format-value="1.85098">1.85</td>
+<td data-format-fiat data-format-value="1.61023">1.61</td>
+<td data-format-fiat data-format-value="1.78345">1.78</td>
+<td data-format-market-cap data-format-value="51576300.0">51,576,300</td>
+<td data-format-market-cap data-format-value="4475690000.0">4,475,690,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 07, 2018</td>
+ <td data-format-fiat data-format-value="1.61594">1.62</td>
+<td data-format-fiat data-format-value="1.87768">1.88</td>
+<td data-format-fiat data-format-value="1.52955">1.53</td>
+<td data-format-fiat data-format-value="1.60022">1.60</td>
+<td data-format-market-cap data-format-value="65922600.0">65,922,600</td>
+<td data-format-market-cap data-format-value="4491550000.0">4,491,550,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 06, 2018</td>
+<td data-format-fiat data-format-value="1.4768">1.48</td>
+<td data-format-fiat data-format-value="1.70152">1.70</td>
+<td data-format-fiat data-format-value="1.20339">1.20</td>
+<td data-format-fiat data-format-value="1.62318">1.62</td>
+<td data-format-market-cap data-format-value="101327000.0">101,327,000</td>
+<td data-format-market-cap data-format-value="4104810000.0">4,104,810,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 05, 2018</td>
+<td data-format-fiat data-format-value="1.75131">1.75</td>
+<td data-format-fiat data-format-value="1.7699">1.77</td>
+<td data-format-fiat data-format-value="1.34792">1.35</td>
+<td data-format-fiat data-format-value="1.44523">1.45</td>
+<td data-format-market-cap data-format-value="69213800.0">69,213,800</td>
+<td data-format-market-cap data-format-value="4867820000.0">4,867,820,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 04, 2018</td>
+<td data-format-fiat data-format-value="1.98011">1.98</td>
+<td data-format-fiat data-format-value="2.06876">2.07</td>
+<td data-format-fiat data-format-value="1.64331">1.64</td>
+<td data-format-fiat data-format-value="1.74411">1.74</td>
+<td data-format-market-cap data-format-value="59380900.0">59,380,900</td>
+<td data-format-market-cap data-format-value="5503780000.0">5,503,780,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 03, 2018</td>
+<td data-format-fiat data-format-value="1.80716">1.81</td>
+<td data-format-fiat data-format-value="2.02318">2.02</td>
+<td data-format-fiat data-format-value="1.62675">1.63</td>
+<td data-format-fiat data-format-value="1.98941">1.99</td>
+<td data-format-market-cap data-format-value="64062000.0">64,062,000</td>
+<td data-format-market-cap data-format-value="5023050000.0">5,023,050,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 02, 2018</td>
+<td data-format-fiat data-format-value="1.89987">1.90</td>
+<td data-format-fiat data-format-value="1.92055">1.92</td>
+<td data-format-fiat data-format-value="1.40955">1.41</td>
+<td data-format-fiat data-format-value="1.80795">1.81</td>
+<td data-format-market-cap data-format-value="118068000.0">118,068,000</td>
+<td data-format-market-cap data-format-value="5280740000.0">5,280,740,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Feb 01, 2018</td>
+<td data-format-fiat data-format-value="2.30973">2.31</td>
+<td data-format-fiat data-format-value="2.32748">2.33</td>
+<td data-format-fiat data-format-value="1.75299">1.75</td>
+<td data-format-fiat data-format-value="1.90684">1.91</td>
+<td data-format-market-cap data-format-value="108876000.0">108,876,000</td>
+<td data-format-market-cap data-format-value="6419970000.0">6,419,970,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 31, 2018</td>
+<td data-format-fiat data-format-value="2.21727">2.22</td>
+<td data-format-fiat data-format-value="2.34055">2.34</td>
+<td data-format-fiat data-format-value="2.17748">2.18</td>
+<td data-format-fiat data-format-value="2.30815">2.31</td>
+<td data-format-market-cap data-format-value="48505200.0">48,505,200</td>
+<td data-format-market-cap data-format-value="6162980000.0">6,162,980,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 30, 2018</td>
+<td data-format-fiat data-format-value="2.58865">2.59</td>
+<td data-format-fiat data-format-value="2.63695">2.64</td>
+<td data-format-fiat data-format-value="2.20217">2.20</td>
+<td data-format-fiat data-format-value="2.21876">2.22</td>
+<td data-format-market-cap data-format-value="94218100.0">94,218,100</td>
+<td data-format-market-cap data-format-value="7195220000.0">7,195,220,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 29, 2018</td>
+<td data-format-fiat data-format-value="2.52112">2.52</td>
+<td data-format-fiat data-format-value="2.58494">2.58</td>
+<td data-format-fiat data-format-value="2.40405">2.40</td>
+<td data-format-fiat data-format-value="2.57639">2.58</td>
+<td data-format-market-cap data-format-value="60210600.0">60,210,600</td>
+<td data-format-market-cap data-format-value="7007530000.0">7,007,530,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 28, 2018</td>
+<td data-format-fiat data-format-value="2.45745">2.46</td>
+<td data-format-fiat data-format-value="2.56022">2.56</td>
+<td data-format-fiat data-format-value="2.45675">2.46</td>
+<td data-format-fiat data-format-value="2.52178">2.52</td>
+<td data-format-market-cap data-format-value="47752200.0">47,752,200</td>
+<td data-format-market-cap data-format-value="6830550000.0">6,830,550,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 27, 2018</td>
+<td data-format-fiat data-format-value="2.37726">2.38</td>
+<td data-format-fiat data-format-value="2.49425">2.49</td>
+<td data-format-fiat data-format-value="2.36627">2.37</td>
+<td data-format-fiat data-format-value="2.44933">2.45</td>
+<td data-format-market-cap data-format-value="43333600.0">43,333,600</td>
+<td data-format-market-cap data-format-value="6607670000.0">6,607,670,000</td>
+ </tr>
+<tr class="text-right">
+<td class="text-left">Jan 26, 2018</td>
+<td data-format-fiat data-format-value="2.35943">2.36</td>
+<td data-format-fiat data-format-value="2.45444">2.45</td>
+<td data-format-fiat data-format-value="2.20219">2.20</td>
+<td data-format-fiat data-format-value="2.3734">2.37</td>
+<td data-format-market-cap data-format-value="62216500.0">62,216,500</td>
+<td data-format-market-cap data-format-value="6558110000.0">6,558,110,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 25, 2018</td>
+<td data-format-fiat data-format-value="2.4627">2.46</td>
+<td data-format-fiat data-format-value="2.58957">2.59</td>
+<td data-format-fiat data-format-value="2.33602">2.34</td>
+<td data-format-fiat data-format-value="2.36521">2.37</td>
+<td data-format-market-cap data-format-value="56586500.0">56,586,500</td>
+<td data-format-market-cap data-format-value="6845150000.0">6,845,150,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 24, 2018</td>
+<td data-format-fiat data-format-value="2.51771">2.52</td>
+<td data-format-fiat data-format-value="2.5737">2.57</td>
+<td data-format-fiat data-format-value="2.36762">2.37</td>
+<td data-format-fiat data-format-value="2.43462">2.43</td>
+<td data-format-market-cap data-format-value="73441600.0">73,441,600</td>
+<td data-format-market-cap data-format-value="6998060000.0">6,998,060,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 23, 2018</td>
+<td data-format-fiat data-format-value="2.46861">2.47</td>
+<td data-format-fiat data-format-value="2.62455">2.62</td>
+<td data-format-fiat data-format-value="2.24271">2.24</td>
+<td data-format-fiat data-format-value="2.49583">2.50</td>
+<td data-format-market-cap data-format-value="81217500.0">81,217,500</td>
+<td data-format-market-cap data-format-value="6861570000.0">6,861,570,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 22, 2018</td>
+<td data-format-fiat data-format-value="2.78396">2.78</td>
+<td data-format-fiat data-format-value="2.90206">2.90</td>
+<td data-format-fiat data-format-value="2.17878">2.18</td>
+<td data-format-fiat data-format-value="2.46824">2.47</td>
+<td data-format-market-cap data-format-value="125555000.0">125,555,000</td>
+<td data-format-market-cap data-format-value="7738110000.0">7,738,110,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 21, 2018</td>
+<td data-format-fiat data-format-value="3.00725">3.01</td>
+<td data-format-fiat data-format-value="3.01059">3.01</td>
+<td data-format-fiat data-format-value="2.63765">2.64</td>
+<td data-format-fiat data-format-value="2.76683">2.77</td>
+<td data-format-market-cap data-format-value="94697300.0">94,697,300</td>
+<td data-format-market-cap data-format-value="8358740000.0">8,358,740,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 20, 2018</td>
+<td data-format-fiat data-format-value="2.70917">2.71</td>
+<td data-format-fiat data-format-value="3.13852">3.14</td>
+<td data-format-fiat data-format-value="2.70917">2.71</td>
+<td data-format-fiat data-format-value="3.00491">3.00</td>
+<td data-format-market-cap data-format-value="140378000.0">140,378,000</td>
+<td data-format-market-cap data-format-value="7530230000.0">7,530,230,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 19, 2018</td>
+<td data-format-fiat data-format-value="2.74534">2.75</td>
+<td data-format-fiat data-format-value="2.93146">2.93</td>
+<td data-format-fiat data-format-value="2.5646">2.56</td>
+<td data-format-fiat data-format-value="2.69717">2.70</td>
+<td data-format-market-cap data-format-value="103437000.0">103,437,000</td>
+<td data-format-market-cap data-format-value="7630760000.0">7,630,760,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 18, 2018</td>
+<td data-format-fiat data-format-value="2.71971">2.72</td>
+<td data-format-fiat data-format-value="3.02848">3.03</td>
+<td data-format-fiat data-format-value="2.60006">2.60</td>
+<td data-format-fiat data-format-value="2.75477">2.75</td>
+<td data-format-market-cap data-format-value="125440000.0">125,440,000</td>
+<td data-format-market-cap data-format-value="7559510000.0">7,559,510,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 17, 2018</td>
+<td data-format-fiat data-format-value="2.60314">2.60</td>
+<td data-format-fiat data-format-value="2.91891">2.92</td>
+<td data-format-fiat data-format-value="1.99498">1.99</td>
+<td data-format-fiat data-format-value="2.71662">2.72</td>
+<td data-format-market-cap data-format-value="239578000.0">239,578,000</td>
+<td data-format-market-cap data-format-value="7235510000.0">7,235,510,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 16, 2018</td>
+<td data-format-fiat data-format-value="3.47055">3.47</td>
+<td data-format-fiat data-format-value="3.47055">3.47</td>
+<td data-format-fiat data-format-value="1.99624">2.00</td>
+<td data-format-fiat data-format-value="2.60085">2.60</td>
+<td data-format-market-cap data-format-value="256703000.0">256,703,000</td>
+<td data-format-market-cap data-format-value="9646500000.0">9,646,500,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 15, 2018</td>
+<td data-format-fiat data-format-value="3.71803">3.72</td>
+<td data-format-fiat data-format-value="3.7605">3.76</td>
+<td data-format-fiat data-format-value="3.47909">3.48</td>
+<td data-format-fiat data-format-value="3.48227">3.48</td>
+<td data-format-market-cap data-format-value="94966600.0">94,966,600</td>
+<td data-format-market-cap data-format-value="10334400000.0">10,334,400,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 14, 2018</td>
+<td data-format-fiat data-format-value="3.93485">3.93</td>
+<td data-format-fiat data-format-value="3.97949">3.98</td>
+<td data-format-fiat data-format-value="3.58178">3.58</td>
+<td data-format-fiat data-format-value="3.73553">3.74</td>
+<td data-format-market-cap data-format-value="130318000.0">130,318,000</td>
+<td data-format-market-cap data-format-value="10937000000.0">10,937,000,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 13, 2018</td>
+<td data-format-fiat data-format-value="3.70012">3.70</td>
+<td data-format-fiat data-format-value="4.10441">4.10</td>
+<td data-format-fiat data-format-value="3.70012">3.70</td>
+<td data-format-fiat data-format-value="3.93698">3.94</td>
+<td data-format-market-cap data-format-value="198149000.0">198,149,000</td>
+<td data-format-market-cap data-format-value="10284600000.0">10,284,600,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 12, 2018</td>
+<td data-format-fiat data-format-value="3.37949">3.38</td>
+<td data-format-fiat data-format-value="3.73474">3.73</td>
+<td data-format-fiat data-format-value="3.28882">3.29</td>
+<td data-format-fiat data-format-value="3.69103">3.69</td>
+<td data-format-market-cap data-format-value="129802000.0">129,802,000</td>
+<td data-format-market-cap data-format-value="9393390000.0">9,393,390,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 11, 2018</td>
+<td data-format-fiat data-format-value="3.7763">3.78</td>
+<td data-format-fiat data-format-value="3.82448">3.82</td>
+<td data-format-fiat data-format-value="3.18384">3.18</td>
+<td data-format-fiat data-format-value="3.36733">3.37</td>
+<td data-format-market-cap data-format-value="245028000.0">245,028,000</td>
+<td data-format-market-cap data-format-value="10496300000.0">10,496,300,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 10, 2018</td>
+<td data-format-fiat data-format-value="3.55564">3.56</td>
+<td data-format-fiat data-format-value="3.78389">3.78</td>
+<td data-format-fiat data-format-value="3.20544">3.21</td>
+<td data-format-fiat data-format-value="3.78389">3.78</td>
+<td data-format-market-cap data-format-value="235594000.0">235,594,000</td>
+<td data-format-market-cap data-format-value="9883000000.0">9,883,000,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 09, 2018</td>
+<td data-format-fiat data-format-value="3.84256">3.84</td>
+<td data-format-fiat data-format-value="3.91605">3.92</td>
+<td data-format-fiat data-format-value="3.45129">3.45</td>
+ <td data-format-fiat data-format-value="3.53717">3.54</td>
+<td data-format-market-cap data-format-value="200086000.0">200,086,000</td>
+<td data-format-market-cap data-format-value="10680500000.0">10,680,500,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 08, 2018</td>
+<td data-format-fiat data-format-value="4.07064">4.07</td>
+<td data-format-fiat data-format-value="4.18974">4.19</td>
+<td data-format-fiat data-format-value="3.36406">3.36</td>
+<td data-format-fiat data-format-value="3.84585">3.85</td>
+<td data-format-market-cap data-format-value="317248000.0">317,248,000</td>
+<td data-format-market-cap data-format-value="11314500000.0">11,314,500,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 07, 2018</td>
+<td data-format-fiat data-format-value="3.94609">3.95</td>
+<td data-format-fiat data-format-value="4.58039">4.58</td>
+<td data-format-fiat data-format-value="3.93131">3.93</td>
+<td data-format-fiat data-format-value="4.07056">4.07</td>
+<td data-format-market-cap data-format-value="249833000.0">249,833,000</td>
+<td data-format-market-cap data-format-value="10968300000.0">10,968,300,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 06, 2018</td>
+<td data-format-fiat data-format-value="3.75493">3.75</td>
+<td data-format-fiat data-format-value="4.19028">4.19</td>
+<td data-format-fiat data-format-value="3.75455">3.75</td>
+<td data-format-fiat data-format-value="3.94223">3.94</td>
+<td data-format-market-cap data-format-value="161228000.0">161,228,000</td>
+<td data-format-market-cap data-format-value="10436900000.0">10,436,900,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 05, 2018</td>
+<td data-format-fiat data-format-value="4.06062">4.06</td>
+<td data-format-fiat data-format-value="4.1973">4.20</td>
+<td data-format-fiat data-format-value="3.65827">3.66</td>
+<td data-format-fiat data-format-value="3.75445">3.75</td>
+<td data-format-market-cap data-format-value="219320000.0">219,320,000</td>
+<td data-format-market-cap data-format-value="11286600000.0">11,286,600,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 04, 2018</td>
+<td data-format-fiat data-format-value="4.12529">4.13</td>
+<td data-format-fiat data-format-value="4.50333">4.50</td>
+<td data-format-fiat data-format-value="3.7553">3.76</td>
+<td data-format-fiat data-format-value="4.08231">4.08</td>
+<td data-format-market-cap data-format-value="376974000.0">376,974,000</td>
+<td data-format-market-cap data-format-value="11466400000.0">11,466,400,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 03, 2018</td>
+<td data-format-fiat data-format-value="3.99698">4.00</td>
+<td data-format-fiat data-format-value="4.18533">4.19</td>
+ <td data-format-fiat data-format-value="3.90239">3.90</td>
+<td data-format-fiat data-format-value="4.12684">4.13</td>
+<td data-format-market-cap data-format-value="203783000.0">203,783,000</td>
+<td data-format-market-cap data-format-value="11109700000.0">11,109,700,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 02, 2018</td>
+<td data-format-fiat data-format-value="4.08825">4.09</td>
+<td data-format-fiat data-format-value="4.31302">4.31</td>
+<td data-format-fiat data-format-value="3.83977">3.84</td>
+<td data-format-fiat data-format-value="3.99615">4.00</td>
+<td data-format-market-cap data-format-value="269750000.0">269,750,000</td>
+<td data-format-market-cap data-format-value="11363400000.0">11,363,400,000</td>
+</tr>
+<tr class="text-right">
+<td class="text-left">Jan 01, 2018</td>
+<td data-format-fiat data-format-value="3.55591">3.56</td>
+<td data-format-fiat data-format-value="4.3644">4.36</td>
+<td data-format-fiat data-format-value="3.42004">3.42</td>
+<td data-format-fiat data-format-value="3.9744">3.97</td>
+<td data-format-market-cap data-format-value="256630000.0">256,630,000</td>
+<td data-format-market-cap data-format-value="9883750000.0">9,883,750,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="metadata" class="hidden" data-slug="iota" data-platformsymbol="" data-apidomain="https://graphs2.coinmarketcap.com" data-mobile="False" data-platform="False">
+</div>
+<hr />
+<div id="leaderboard-bottom" class="row text-center">
+
+<div id='div-gpt-ad-1488495260324-8' class="centered leaderboard">
+<script>
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1488495260324-8'); });
+                                    </script>
+</div>
+</div>
+<hr />
+<div id="footer" class="row">
+<div class="col-xs-12 col-md-5">
+<div>
+&copy; 2018 CoinMarketCap |
+<a href="/advertising/" target="_blank">Advertise</a> |
+<a href="/api/">API</a> |
+<a href="/disclaimer/">Disclaimer</a> |
+<a href="/faq/">FAQ</a> |
+<a href="/request/" target="_blank">Request Form</a>
+</div>
+<br>
+<div>
+Night Mode:
+<div class="btn-group" data-toggle="buttons">
+<label class="btn btn-default btn-sm" data-night-mode-off>
+<input type="radio"> Off
+</label>
+<label class="btn btn-default btn-sm" data-night-mode-on>
+<input type="radio"> On
+</label>
+</div>
+</div>
+<div class="visible-sm visible-xs"><br></div>
+</div>
+<div class="clearfix visible-sm visible-xs"></div>
+<div class="col-md-1 text-center">
+<a href="https://www.facebook.com/CoinMarketCap" target="_blank"><img src="https://s2.coinmarketcap.com/static/cloud/img/facebook_logo.png" alt="twitter" class="icon-social" /></a>
+<a href="https://twitter.com/CoinMarketCap" target="_blank"><img src="https://s2.coinmarketcap.com/static/cloud/img/twitter_logo.png" alt="twitter" class="icon-social" /></a>
+</div>
+<div class="clearfix visible-sm visible-xs"><br></div>
+<div class="col-xs-12 col-md-6 text-right">
+Donate BTC: <a class="pointer" data-toggle="modal" data-target="#donate_btc">3CMCRgEm8HVz3DrWaCCid3vAANE42jcEv9</a><br>
+Donate LTC: <a class="pointer" data-toggle="modal" data-target="#donate_ltc">LTdsVS8VDw6syvfQADdhf2PHAm3rMGJvPX</a><br>
+Donate ETH: <a class="pointer" data-toggle="modal" data-target="#donate_eth">0x0074709077B8AE5a245E4ED161C971Dc4c3C8E2B</a><br>
+Donate BCH: <a class="pointer" data-toggle="modal" data-target="#donate_bch">1LVXG4Z4oF6TrJfmUfSuLX8nqb8c5eCwha</a>
+</div>
+</div>
+
+<div class="modal fade" id="donate_btc" tabindex="-1" role="dialog" aria-labelledby="donate_btc_label" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header text-center">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title" id="donate_btc_label">Donate Bitcoin</h4>
+</div>
+<div class="modal-body text-center">
+<strong>3CMCRgEm8HVz3DrWaCCid3vAANE42jcEv9</strong> <br /> <img src="https://s2.coinmarketcap.com/static/cloud/img/qrcodes/donate_bitcoin.png" alt="Donate Bitcoin"><br />
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="donate_ltc" tabindex="-1" role="dialog" aria-labelledby="donate_ltc_label" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header text-center">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title" id="donate_ltc_label">Donate Litecoin</h4>
+</div>
+<div class="modal-body text-center">
+<strong>LTdsVS8VDw6syvfQADdhf2PHAm3rMGJvPX</strong> <br /> <img src="https://s2.coinmarketcap.com/static/cloud/img/qrcodes/donate_litecoin.png" alt="Donate Litecoin"><br />
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="donate_eth" tabindex="-1" role="dialog" aria-labelledby="donate_eth_label" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header text-center">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title" id="donate_eth_label">Donate Ethereum</h4>
+</div>
+<div class="modal-body text-center">
+<strong>0x0074709077B8AE5a245E4ED161C971Dc4c3C8E2B</strong> <br /> <img src="https://s2.coinmarketcap.com/static/cloud/img/qrcodes/donate_ethereum.png" alt="Donate Ethereum"><br />
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="donate_bch" tabindex="-1" role="dialog" aria-labelledby="donate_bch_label" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header text-center">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title" id="donate_bch_label">Donate Bitcoin Cash</h4>
+</div>
+<div class="modal-body text-center">
+<strong>1LVXG4Z4oF6TrJfmUfSuLX8nqb8c5eCwha</strong> <br /> <img src="https://s2.coinmarketcap.com/static/cloud/img/qrcodes/donate_bitcoin_cash.png" alt="Donate Bitcoin Cash"><br />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-2 hidden-xs hidden-sm hidden-md">
+<div style="margin-top:200px;float:right;">
+<div style='width:160px; height:600px;'>
+
+<div id='div-gpt-ad-1488495260324-10' class="skyscraper">
+<script>
+                                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1488495260324-10'); });
+                                </script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="currency-exchange-rates" data-usd="1" data-eur="1.2294255631998505" data-cny="0.1592153865749586" data-gbp="1.4034024087998944" data-cad="0.7743054480131323" data-rub="0.017376436162448827" data-hkd="0.12740719978085963" data-jpy="0.009432627458378532" data-aud="0.7660768896052559" data-brl="0.30173339802497384" data-inr="0.01535272894757043" data-krw="0.0009458948164964056" data-mxn="0.05464869089060972" data-idr="7.265692094886066e-05" data-chf="1.0459124173859928" data-clp="0.0016520733520568314" data-czk="0.04847544718600029" data-dkk="0.16500030112554956" data-huf="0.003932092758068163" data-ils="0.28423989278471246" data-myr="0.25835120262484823" data-nok="0.12680859168787437" data-nzd="0.7215262300038024" data-php="0.019120824489952008" data-pkr="0.008641182666824511" data-pln="0.2920134326179004" data-sek="0.11912899549716223" data-sgd="0.7618176970251018" data-thb="0.032030749519538756" data-try="0.2516938999466409" data-twd="0.0343218012081274" data-zar="0.08430368277266044" data-btc="6986.7680640432363" data-eth="387.18181966196255" data-ltc="118.16473233351036" data-xrp="0.48622272297697611" data-bch="669.026584777523"></div>
+<script>
+            var LANG_CODE = 'en';
+            var STATIC_DOMAIN = 's2.coinmarketcap.com';
+        </script>
+<script src="https://s2.coinmarketcap.com/static/cloud/compressed/base.792bb01a.min.js"></script>
+<script src="https://s2.coinmarketcap.com/static/cloud/compressed/detail_historical_data.bf041fb9.min.js"></script>
+<script>
+
+const PHRASES = {
+    months: {mar: 'March',feb: 'February',aug: 'August',sep: 'September',apr: 'April',jun: 'June',jul: 'July',jan: 'January',may: 'May',nov: 'November',dec: 'December',oct: 'October'},
+    weekdays: {wed: 'Wed',sun: 'Sun',thu: 'Thu',mon: 'Mon',fri: 'Fri',tue: 'Tue',sat: 'Sat'},
+    dateFormat: "MM/DD/YYYY",
+    customRange: "Custom Range",
+    apply: "Apply",
+    cancel: "Cancel",
+    from: "From",
+    to: "To",
+    weekLabel: "W"
+};
+
+$(document).ready(function() {
+    var start = moment('20180101');
+    var end = moment('20180330');
+    var polyglot = new Polyglot({phrases: PHRASES});
+
+    function cb(start, end) {
+        $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        "locale": {
+            "format": polyglot.t('dateFormat'),
+            "separator": " - ",
+            "applyLabel": polyglot.t('apply'),
+            "cancelLabel": polyglot.t('cancel'),
+            "fromLabel": polyglot.t('from'),
+            "toLabel": polyglot.t('to'),
+            "customRangeLabel": polyglot.t('customRange'),
+            "weekLabel": polyglot.t('weekLabel'),
+            "daysOfWeek": [
+                polyglot.t('weekdays.sun'),
+                polyglot.t('weekdays.mon'),
+                polyglot.t('weekdays.tue'),
+                polyglot.t('weekdays.wed'),
+                polyglot.t('weekdays.thu'),
+                polyglot.t('weekdays.fri'),
+                polyglot.t('weekdays.sat')
+            ],
+            "monthNames": [
+                polyglot.t('months.jan'),
+                polyglot.t('months.feb'),
+                polyglot.t('months.mar'),
+                polyglot.t('months.apr'),
+                polyglot.t('months.may'),
+                polyglot.t('months.jun'),
+                polyglot.t('months.jul'),
+                polyglot.t('months.aug'),
+                polyglot.t('months.sep'),
+                polyglot.t('months.oct'),
+                polyglot.t('months.nov'),
+                polyglot.t('months.dec')
+            ],
+            "firstDay": 1
+        },
+        ranges: {
+            'Last 7 Days': [moment.utc().subtract(6, 'days'), moment.utc()],
+            'Last 30 Days': [moment.utc().subtract(30, 'days'), moment.utc()],
+            'Last 3 Months': [moment.utc().subtract(3, 'months'), moment.utc()],
+            'Last 12 Months': [moment.utc().subtract(12, 'months'), moment.utc()],
+            'Year To Date': [moment.utc().startOf('year'), moment.utc()],
+            'All Time': ["04-28-2013", moment.utc()]
+        }
+    }, cb);
+
+    cb(start, end);
+
+
+  $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+    //do something, like clearing an input
+    var startDate = picker.startDate.format('YYYYMMDD');
+    var endDate = picker.endDate.format('YYYYMMDD')
+    var location = "/currencies/iota/historical-data/?start=" + startDate + "&end=" + endDate;
+    window.location = location
+  });  
+
+    renderCurrencyDetailFields(Currency.get());
+    runNumberFormatters();
+});
+
+Currency.onChange(function (e, currency) {
+    renderCurrencyDetailFields(currency);
+});
+
+</script>
+<script>
+            $( document ).ready(function() {
+                // GTM Session Set
+                var maxExpire = new Date('2038-01-19 00:00:00');
+                if (Cookies.get("gtm_session_first") === undefined) {
+                    Cookies.set("gtm_session_first", new Date(), {expires: maxExpire})
+                }            
+
+                Cookies.set("gtm_session_last", new Date(), {expires: maxExpire})
+                
+                // Header Banner Prefs
+                $(".header-banner-close").on('click', function () {
+                    Cookies.set("header-banner-noshow", "1", {expires: 1})
+                    $('#header-banner-wrapper').fadeOut();
+                    dataLayer.push({
+                        'event': 'customEvent',
+                        'eventCategory': 'Header Banner',
+                        'eventAction': 'Close',
+                    });
+                });
+
+            });
+
+            (function () {
+                var polyglot = new Polyglot({phrases: {
+                    cryptocurrencies: "Cryptocurrencies",
+                    exchanges: "Exchanges"
+                }});
+
+                initQuickSearch({
+                    currencyDataURL: 'https://' + STATIC_DOMAIN + '/generated/search/quick_search.json',
+                    exchangeDataURL: 'https://' + STATIC_DOMAIN + '/generated/search/quick_search_exchanges.json',
+                    currencySuggestionTemplate: function (context) {
+                        var template = "/currencies/%25s/";
+                        context.url = template.replace('%25s', context.slug);
+                        return Handlebars.templates['quick_search'](context);
+                    },
+                    exchangeSuggestionTemplate: function (context) {
+                        var template = "/exchanges/%25s/";
+                        context.url = template.replace('%25s', context.slug);
+                        return Handlebars.templates['quick_search_exchanges'](context);
+                    },
+                    currencyLimit: 6,
+                    exchangeLimit: 4
+                }, polyglot);
+
+                $('[data-language-toggle]').on('click', function () {
+                    dataLayer.push({
+                        'event': 'customEvent',
+                        'eventCategory': 'Language Dropdown',
+                        'eventAction': 'Language Selected',
+                        'eventLabel': $(this).data('language-toggle')
+                    });
+                });
+
+                var language = $('[data-language-toggle="' + 'en' + '"]').html();
+                $('[data-language-dropdown]').html(language);
+
+                NightMode.initSwitch();
+            })();
+        </script>
+</body>
+</html>

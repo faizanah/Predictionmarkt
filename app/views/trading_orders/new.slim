@@ -1,0 +1,33 @@
+// = content_for(:action_links) do
+// ul.nav.navbar-nav
+// = order_type_link('market')
+// = order_type_link('limit')
+// TODO: enable stop orders
+// = order_type_link('stop')
+
+.trade-card
+  section.trade-card__header
+    = link_to @market.title, seo_market_path(@market)
+  #market_form= render partial: "trading_orders/form"
+
+= ot_tabs do |c|
+  - c.tab 'Chart'
+    #tv_chart.tv-chart data = { tv: { symbol: @contract.ticker, css: stylesheet_path('external/tradingview')} }
+  - c.tab 'Order book'
+    = render partial: 'prices'
+  - if current_user
+    - c.tab 'Orders'
+      = render partial: 'markets/orders',
+               locals: { orders: @trading_orders,
+                         empty_message: "You don't have any open orders for this market." }
+    - c.tab 'Shares'
+      = render partial: 'markets/shares'
+
+  - c.tab 'Info'
+    = render 'markets/info'
+
+  - c.tab 'Rules'
+    = render 'markets/rules'
+
+= render partial: 'markets/shared/market_comments'
+

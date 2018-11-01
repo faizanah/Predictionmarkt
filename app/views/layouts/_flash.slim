@@ -1,0 +1,13 @@
+- alerts = flash.map { |t, m| [t.to_s, m] }
+- alerts << ['notice', 'Test message'] if Rails.env.development? && params[:flash_test]
+- alerts.each do |type, message|
+  ruby:
+    next if type == 'timedout'
+    type = 'primary' if type == 'notice'
+    type = 'danger'  if type == 'alert'
+    raise "weird flash message: #{type}: #{message}" if message.blank? || %w[primary danger].exclude?(type)
+  .alert.alert-dismissible.fade.show role='alert' class="alert-#{type}"
+    button.close data={ dismiss: 'alert' } aria-label='Close'
+      span aria-hidden=true &times;
+    = message
+

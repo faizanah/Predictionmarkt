@@ -1,0 +1,17 @@
+.market-admin-card
+  .market-admin-card__header
+    h2= @market_outcome.persisted? ? 'Save outcome' : 'Add outcome'
+
+  = simple_form_for([:admin, @market, @market_outcome]) do |f|
+    .market-admin-card__content
+      .form-block
+        = f.error_notification
+        = f.input :lock_version
+        = f.input :title, input_html: { autocomplete: 'off' }
+        = f.input :short_title, input_html: { autocomplete: 'off' }
+        = f.input :ticker_base, input_html: { autocomplete: 'off' }
+        = f.input :ticker, readonly: true, input_html: { autocomplete: 'off' }
+        = f.input :odds
+    .market-admin-card__footer
+      = f.button :submit, @market_outcome.persisted? ? 'Save outcome' : 'Add outcome'
+

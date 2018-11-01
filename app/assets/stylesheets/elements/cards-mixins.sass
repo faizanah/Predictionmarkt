@@ -1,0 +1,84 @@
+// Defaults offsets for all cards
+
+@mixin pmkt-card-mx
+  @extend .mx-3
+
+@mixin pmkt-card-my
+  @extend .my-3
+
+@mixin pmkt-card-mb
+  @extend .mb-3
+
+@mixin pmkt-card-mt
+  @extend .mt-3
+
+// Overtop card margin from the header
+@mixin pmkt-card-overtop-mt
+  @extend .mt-5
+
+@mixin pmkt-card-overtop-offsets
+  margin-top: -30px !important
+  +pmkt-card-mx
+  @extend .px-3
+
+@mixin pmkt-card-overtop-header
+  +pmkt-card-overtop-offsets
+  @extend .mb-3
+  @extend .py-3
+  +mdc-elevation(9, $mdc-theme-primary-dark)
+
+@mixin pmkt-card-header-colors
+  @extend .mdc-theme--primary-bg
+  @extend .mdc-theme--text-primary-on-primary
+
+// Just a simple replacement of Bootstrap's .card
+@mixin pmkt-card
+  display: flex
+  flex-direction: column
+  @extend .bg-white
+  border: 1px solid rgba(0, 0, 0, 0.125)
+
+@mixin pmkt-card-overtop
+  +pmkt-card
+  +pmkt-card-overtop-mt
+  .card-header, &__header
+    +pmkt-card-overtop-header
+    +pmkt-card-header-colors
+  .card-title, &__title
+    @extend .m-0
+    h1, h2, h3, h4, h5, h6
+      @extend .m-0
+
+@mixin pmkt-card-mini
+  @extend .mdc-card
+  @extend .bg-white
+  @extend .mb-4
+  @extend .w-100
+
+  &__header
+    +pmkt-card-mx
+    +pmkt-card-mt
+    @extend .mb-2
+    a, h1, h2, h3
+      @extend .mdc-typography--title
+      @extend .mdc-theme--text-primary-on-background
+
+  &__content-header
+    +pmkt-card-mx
+    +pmkt-card-mt
+    @extend .d-flex
+    align-items: center
+    justify-content: space-between
+    h1, h2, h3
+      @extend .mdc-typography--headline
+
+  &__content
+    +pmkt-card-mx
+    +pmkt-card-mb
+    h1, h2, h3, h4, h5
+      @extend .mdc-typography--headline
+      @extend .mdc-theme--text-primary-on-background
+
+  &__footer
+    +pmkt-card-mx
+    +pmkt-card-mb

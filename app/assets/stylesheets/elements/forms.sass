@@ -1,0 +1,83 @@
+@import 'cards'
+
+.form-block
+  .input-group
+    @extend .mb-2
+    flex-direction: column
+  .input-group-horizontal
+    display: flex
+    flex-direction: row
+    align-items: center
+
+  .mdc-text-field-helper-text
+    align-self: left
+  .mdc-text-field-helper-text--validation-msg
+    @extend .text-danger
+
+  label
+    // @extend .mb-2 // bootstrap reset
+    background: transparent !important
+  .mdc-text-field__label
+    @extend .mb-0 // bootstrap reset is mb-2 by default, does not work with mdc text field which is zero
+  .mdc-text-field
+    width: 100%
+  .mdc-switch, .mdc-switch-label
+    @extend .my-2 // needs to be the same as .form-block label
+    @extend .py-2
+  .mdc-switch
+    @extend .pr-3
+
+.card-block-form
+  .form-block, .form-footer
+    +pmkt-card-mx
+  .form-footer
+    // this can not have top margin/padding because of the broken bootstrap collapse
+    +pmkt-card-mb
+
+.card-form
+  +pmkt-card-overtop
+  .card-header
+    @extend .py-5
+    @extend .text-center
+  .card-block
+    .alert
+      +pmkt-card-mx
+
+  .form-block
+    +pmkt-card-mx
+
+  .form-footer
+    @extend .bg-white
+    +pmkt-card-mb
+    +pmkt-card-mt
+
+
+// Move it to simple form initializer once this PR is fixed
+// https://github.com/plataformatec/simple_form/pull/1476
+// https://github.com/plataformatec/simple_form/issues/1475
+.input-group.is-invalid
+  .mdc-text-field
+    @extend .mdc-text-field--invalid
+
+.pmkt-inline-form
+  @extend .mb-4
+  display: flex
+  flex-direction: row
+  align-items: center
+  .input-group
+    flex: 1 1 auto
+    .mdc-text-field
+      flex: 1 1 auto
+  .btn-action
+    max-width: 200px
+    margin-left: 30px
+
+@include media-breakpoint-down(sm)
+  .pmkt-inline-form
+    flex-direction: column
+    .btn-action
+      max-width: unset
+      margin-left: unset
+
+
+

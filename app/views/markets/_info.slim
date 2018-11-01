@@ -1,0 +1,55 @@
+.card-block
+  = pmkt_table
+    tbody
+      tr
+        td.pmkt-table__key-cell
+          | Market ticker
+        td.w-100
+          = @market.ticker
+      - if @contract
+        tr
+          td.pmkt-table__key-cell
+            | Contract ticker
+          td.w-100
+            = @contract.ticker
+      - if @form
+        tr
+          td.pmkt-table__key-cell
+            | Currency
+          td.w-100
+            = format_currency_name(@form.currency, code: true)
+      tr
+        td.pmkt-table__key-cell
+          | Market type
+        td.w-100.text-capitalize
+          = @market.market_type
+      tr
+        td.pmkt-table__key-cell
+          | Start date
+        td.w-100
+          = @market.start_date&.to_date || @market.created_at.to_date
+      tr
+        td.pmkt-table__key-cell
+          | Close date
+        td.w-100
+          = @market.close_date&.to_date || "N/A"
+  .pmkt-md-up-block
+    = pmkt_table
+      thead
+        tr
+          th.col-3 Currency
+          th.col-3 Daily volume
+          th.col-3 Market Cap
+          th.col-3 Share Price
+      tbody
+        - @market.available_currencies.each do |currency|
+          tr class=(@form&.currency == currency ? 'table-info' : nil)
+            td.col-3
+              = format_currency_name(currency)
+            td.col-3
+              = format_money(@market.prev_day_amount(currency), currency: currency, secure: true)
+            td.col-3
+              = format_money(@market.market_cap(currency), secure: true)
+            td.col-3
+              = format_money(@market.settle_price(currency), prepend: '0 — ', currency: currency)
+

@@ -1,0 +1,27 @@
+.nav-horizontal
+  @extend .mdc-theme--primary-bg
+  @extend .mdc-theme--text-primary-on-primary
+  @extend .navbar
+  @extend .navbar-dark
+  @extend .navbar-expand-sm
+
+a.collapse-indicator:before
+  @extend .fa
+  @extend .fa-angle-right
+  @extend .mr-2
+  transition: all 0.5s
+
+a.collapse-indicator:not(.collapsed):before
+  @extend .fa-rotate-90
+
+// https://github.com/bokmann/font-awesome-rails/blob/master/app/assets/stylesheets/font-awesome.css.erb
+a.collapse-indicator-after:before
+  @extend .fa
+  @extend .fa-pull-right
+  @extend .fa-angle-down
+  @extend .mr-2
+  transition: all 0.35s // TODO: check with bootstrap collapse timings
+
+a.collapse-indicator-after.collapsed:before
+  @extend .fa-rotate-90
+

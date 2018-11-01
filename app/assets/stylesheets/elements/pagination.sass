@@ -1,0 +1,27 @@
+.pagination
+  .page-link
+    @extend .text-uppercase
+    border: 0
+    background-color: transparent
+    border-radius: 30px !important
+    //border-radius: 50% !important // next button is broken
+    font-size: 0.8rem
+    @extend .m-1
+    transition: all 0.3s linear
+
+    &:focus
+      background-color: transparent
+
+    &:hover
+      transition: all 0.1s linear
+      @extend .mdc-theme--background
+
+  .active .page-link
+    transition: all 0.2s linear
+    +mdc-elevation(6, $mdc-theme-primary-dark)
+
+    &:hover
+      transition: all 0.3s linear
+      @extend .mdc-theme--text-primary-on-background
+      @extend .mdc-theme--background
+

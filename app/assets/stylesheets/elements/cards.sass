@@ -1,0 +1,57 @@
+@import 'cards-mixins'
+
+// ot-container or Overtop Container
+// Build using ot_container in OvertopHelper
+
+// This offset is used for grid alignment, such as on market/show
+.ot-container-offset-top
+  +pmkt-card-overtop-mt
+
+.ot-container
+  +pmkt-card-overtop
+
+  &__header
+    @extend .d-flex
+    justify-content: space-between
+
+  &__header-tabs // Bootstrap till mdc has something better
+    @extend .navbar
+    @extend .nav-horizontal
+    @extend .navbar-dark
+    @extend .p-0
+    flex-wrap: wrap // bootstrap bug
+    .nav-link.active, .nav-link:hover
+      @extend .mdc-theme--text-primary-on-primary
+    .nav-link
+      @extend .mdc-theme--text-secondary-on-primary
+    a
+      @extend .py-0
+
+  &__title
+
+  &__content
+    @extend .container
+    @extend .mb-2
+
+  &__footer
+    margin: $grid-gutter-width/2
+    @extend .px-0
+    @extend .py-0
+
+.orders-card
+  +pmkt-card-mini
+
+.shares-card
+  +pmkt-card-mini
+
+.order-card
+  +pmkt-card-mini
+
+.set-card
+  +pmkt-card-mini
+
+.trade-card
+  +pmkt-card-mini
+
+.market-admin-card
+  +pmkt-card-mini

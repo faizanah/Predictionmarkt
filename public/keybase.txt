@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/predictionmarkt
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://predictionmarkt.com
+  * I am predictionmarkt (https://keybase.io/predictionmarkt) on keybase.
+  * I have a public key with fingerprint 7368 39ED 28D3 CD32 548E  A031 9C5E 7099 6987 BC04
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010170ddd8ce3b03fb9d7b1814ba17ff58d5bb9eda943eab15e7d6b434635a43da810a",
+      "fingerprint": "736839ed28d3cd32548ea0319c5e70996987bc04",
+      "host": "keybase.io",
+      "key_id": "9c5e70996987bc04",
+      "kid": "010170ddd8ce3b03fb9d7b1814ba17ff58d5bb9eda943eab15e7d6b434635a43da810a",
+      "uid": "18ade6edce95cd9ab5e4e955330f1119",
+      "username": "predictionmarkt"
+    },
+    "service": {
+      "hostname": "predictionmarkt.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1518105275,
+  "expire_in": 157680000,
+  "prev": "b11755fbcf69c48481df3dcb558dfe98d018d041ce48d688097106b429177941",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owJ4nK1SfVAUZRw+OFAEcVDBacpgXLRQ4Nj3dvd29/wYkSM+HCcOGQsGvdmPd+9W
+uN11dw8FxQgQP5JCwU80UiInw5wSJhLKNAwbpSCpmcTxo8lCs9JhiiFz7D3K//yz
+d2Zn3333eZ7f7/e8T0O01RIZcmiNdkDe2hMWcvE2bynapPdtxHhVLMecG7ESOPGC
+pSI0TE+JLGJODAc4oHFRFBkBEjxOSDwr0jxgAMlzgJYkihEpnmehyLEkATkeUJAW
+HTxJkA6C4khC5BiAc1gKJsmKF+qaLismkqUJB0Mglp0RCUEk7BTJQA4nACsgPs6y
+DpaheQEnEdGnGkEGao7nDGiTVXSGPjwT7T0B/z/3HZiQAwwnQgcUBchSgshyPAVJ
+tKUIApcAAGwQaEBd4fwQoTUdirJgyqri5/QSE6tMwdDPMlmAQX+DAz0ZaBNUP1LS
+dNVUBbUUAXymqRnOoIBZrgUZ6yHv+U/Lw8uKiFxFjDKoG0gEcwKERHpBcUChaXHK
+TlMpGNygyTr0yEEERTsYHC10Jah8GdLkAaApSuIFycEKJEMyQJQIUeApZJIEWUbE
+AXpIIECSER0Mg7M0wJFXdhbQNEsCLDjeOkXFnKiUyXmRpCF7Fc4M6BCrjNwe2hhm
+CYm0VM6aE2b42F+TLvfbC15/CzxOYnhoMIae2CoLWjZLkmwYAainou6WKqrJBd0x
+bKoGFc2r2SRZMn0+VTegn1NsCjT/TVKmy864iAzXRJIy04NJyqAyHydjWQZOWiKn
+xDyu6NJiLK/NcJ8frvfEaptH6yrOHVuSVYEF1tZMD8P6tAP47qsD3YUdTXdeHq6j
+dsUVz1x59+YKa3mAHi2dc6O/brI6dUdK4d7kIzu78Jydns7aafX4vNRPji9IxKqS
+r/X3tSUUd3HRvzBHO/KUbYfmD6RENyafqB7rjsi9enpbTFRXS0r3jyPFPz/6/uqV
+M/EjSTlbGmxF5xuMpx1O/Zn317Vb596aq0ZF1vU2Zzm9h/dY8++03Gh3fzl08cK8
+gjfzH/Kxe5K4cevNnu7804WrBy8dLYjtGBmwFk06cfvAudxV7KN7y28Qgfgzlk9F
+X5x3UvZzH1yPcsd9rNpHLl/JvusaT2jL1jOaO/PCF+9K+Gx0ac0rS/66kEE0zxqM
+dS2uTajNXug+uNlv++3Zv8uPNw/6Xb373DEzQ+s/+vPVvbFdq0/avVO+W+9cdLhl
+8jVsvnR8YXHhWqpqC3jp2INA6QzphcYHHWd3TwXXZ5+41J3Z2h66I6d0qCy5taZ4
+xu9K7hut7/Z+8VB0rKpoGvffs559Kv5+1Qr/i7OXnVqwqSQis3rZ/qK0VmyR++Ho
+9IyqAnd6YZMrNDE866eo6G+/Tt+/iv888b2IDcP5S9WBNfUHG++fnH5LXp/z1YdH
+TtHL26p72nNd68LDx1K1/rF3pj3/Q+t4x9vbt6rR3ySuzKOi0hKm9RyK/yMN61sS
+ty+kfKgT+wf5Rdqv
+=2TjB
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/predictionmarkt
+
+==================================================================

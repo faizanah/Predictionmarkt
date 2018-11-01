@@ -1,0 +1,49 @@
+// Separate gems with helpers included
+@import "font-awesome-sprockets"
+@import "font-awesome"
+//@import 'material_icons' outdated 2.x stuff
+
+=webfont($font-family, $file_path, $font-weight: normal, $font-style: normal)
+  @font-face
+    font-family: $font-family
+    src: font-url("#{$file-path}.eot")
+    src: url(font-path("#{$file-path}.eot") + "?#iefix") format("embedded-opentype"), font-url("#{$file-path}.woff") format("woff"), font-url("#{$file-path}.ttf") format("truetype"), url(font-path("#{$file-path}.svg")) format("svg")
+    font-weight: $font-weight
+    font-style: $font-style
+
++webfont("Roboto", "roboto/Roboto-Light", 300)
++webfont("Roboto", "roboto/Roboto-Regular", 400)
++webfont("Roboto", "roboto/Roboto-Medium", 500)
++webfont("Roboto", "roboto/Roboto-Bold", 700)
++webfont("Roboto Slab", "roboto-slab/RobotoSlab-Light", 300)
++webfont("Roboto Slab", "roboto-slab/RobotoSlab-Regular", 400)
++webfont("Roboto Slab", "roboto-slab/RobotoSlab-Regular", 500)
++webfont("Roboto Slab", "roboto-slab/RobotoSlab-Bold", 700)
++webfont("Material Icons", "material-icons/MaterialIcons-Regular", 400)
++webfont("Montserrat", "montserrat/Montserrat-Regular", 400)
+
+// Bootstrap configuration
+
+$font-family-sans-serif:  "Roboto"
+$font-family-serif:       "Roboto Slab"
+
+// https://github.com/rubysamurai/material_components_web-sass/blob/master/vendor/assets/stylesheets/%40material/fonts/material-icons.scss
+.material-icons
+  font-family: 'Material Icons'
+  font-weight: normal
+  font-style: normal
+  font-size: 24px
+  display: inline-block
+  line-height: 1
+  text-transform: none
+  letter-spacing: normal
+  word-wrap: normal
+  white-space: nowrap
+  direction: ltr
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale
+  font-feature-settings: 'liga'

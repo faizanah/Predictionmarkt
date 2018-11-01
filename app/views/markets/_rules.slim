@@ -1,0 +1,28 @@
+.embedded-page-content
+
+  h3 Outcome determination
+
+  p= market_rules(@market)
+
+  h3 Market liquidation
+
+  p
+    |
+      Once the outcome is determined, the market closes for up to 48 hours during which it is possible to dispute the outcome.
+      After that all the shares are liquidated and automatically converted to money.
+
+  p
+    |
+      The liquidation value of the shares which represent the actual outcome of this market will be 100%.
+      All the other shares will have no value.
+
+
+  h3 Dispute rules
+
+  p
+    |
+      Please contact #{ mail_to 'concierge@predictionmarkt.com' } for any disputes.
+
+  p
+    |
+      The decisions and determinations about the market outcomes shall be at PredictionMarkt’s sole discretion and shall be final.

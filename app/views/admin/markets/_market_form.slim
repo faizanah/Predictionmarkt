@@ -1,0 +1,22 @@
+.market-admin-card
+  = simple_form_for([:admin, @market]) do |f|
+    .market-admin-card__content
+      .form-block
+        = f.error_notification
+        = f.input :lock_version
+        = f.input :title, input_html: { autocomplete: 'off' }
+        = f.input :ticker_base, input_html: { autocomplete: 'off' }
+        = f.input :ticker, readonly: true, input_html: { autocomplete: 'off' }
+        = f.input :external_url, readonly: true, input_html: { autocomplete: 'off' }
+        = f.input :market_type, include_blank: false
+        = f.input :rules, as: :text, input_html: { rows: 8 }
+        = f.input :state, include_blank: false
+        = f.input :close_date, input_html: { class: 'daterange', data: { 'single-date-picker' =>  true, 'min-date' => Time.current.tomorrow.to_date } }, as: 'string',
+                               hint: 'Date on which trading for all contracts in this market will stop'
+        = f.input :market_category_ids, collection: (nested_set_options(MarketCategory) {|i| "#{'-' * i.level * 3} #{i.name}" }), input_html: { multiple: true, size: 10 }, wrapper: :nowrappers
+        - if @market.market_cover.attached?
+          .market-cover-preview
+            .market-card__image style="background: url('#{market_image_path(@market)}'); width: 250px; height: 250px;"
+        = f.input :market_cover, as: :file
+    .market-admin-card__footer
+      = f.button :submit, t('forms.continue', default: 'Continue')

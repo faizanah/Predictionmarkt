@@ -1,0 +1,23 @@
+.row.justify-content-center
+  .col-xs-12.col-sm-10.col-md-6.col-lg-5
+    = simple_form_for(@form, url: withdraw_my_funds_path) do |f|
+      .card-form
+        .card-header
+          .card-title
+            h4 Withdraw funds
+        .form-block.mt-5
+          h5
+            == "Balance: #{format_money(@form.last_trx.total, currency: @form.currency)}"
+        .form-block
+          = f.input :currency, as: 'hidden'
+          = f.input :address, label: "Receiving #{@form.currency.upcase} address"
+          = f.input :money, as: :percentage, label: "Amount, in #{@form.currency.upcase}"
+        .form-block
+          p.generic-hint
+            |
+              PredictionMarkt will charge <strong>#{format_odds(pmkt_config[:withdraw_comission])} fee</strong> including the network processing fee.
+
+        .form-block
+          .form-footer
+            = f.button :submit, 'Continue', data: { disable_with: 'Processing...' }
+

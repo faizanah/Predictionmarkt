@@ -1,0 +1,15 @@
+h4 Market
+p Choose "Buy" or "Sell" and enter the size of your order. Selecting "Buy" for example, and entering 100 as the amount, will buy one hundred BTC worth of "#{@market_outcome.title}" contract for the selected market.
+p Market orders cannot be cancelled because they are filled immediately.
+p Market orders may be partially filled at several prices. Each part of your order will be shown in the Contracts Transactions.
+h4 Limit
+p Enter the order size, and your price, then select the button to place your order. When you place an order, it will be shown in 'Open orders'.
+p A basic limit order may be partially filled and is subject to price improvement - you may get an even better price than you asked for.
+// TODO: enable stop orders
+- if false
+  h4 Stop
+  p Enter the order size, and your price, then select the button to place your order. When you place an order, it will be shown in 'Open orders'.
+  p To place a Stop Market order, specify the amount and price at which the order should be triggered. Note that Stop Market orders are executed as market orders and may incur slippage.
+  p To place a Stop Limit order, specify the amount and price at which the order should be triggered and also click "Advanced" to specify the Limit Price. A Stop Limit order will automatically post a Limit Order at the Limit Price when the Stop Price is triggered
+
+

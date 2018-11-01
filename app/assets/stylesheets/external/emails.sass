@@ -1,0 +1,64 @@
+@import 'theme/palette'
+@import "bootstrap/scss/functions"
+@import "bootstrap/scss/variables"
+@import "bootstrap/scss/mixins"
+@import "bootstrap/scss/root"
+@import "bootstrap/scss/reboot"
+@import "bootstrap/scss/buttons"
+@import "bootstrap/scss/utilities"
+
+body
+  background-color: $white
+
+@mixin content-block-y-offset
+  @extend .py-5
+
+@mixin content-width
+  width: 600px
+
+.content-wrapper
+  margin: 10px auto
+  background-color: $white
+  border: 0px
+  border-spacing: 0px
+  border-collapse: separate
+
+.content
+  margin: auto
+  +content-width
+  border: 1px solid #e3e3e3
+  border-spacing: 0px
+  border-collapse: separate
+
+  &__header
+    +content-width
+    +content-block-y-offset
+    background-color: #ffffff
+  &__header-link
+  &__header-image
+    height: 40px
+
+  &__footer
+    +content-block-y-offset
+    @extend .text-center
+  &__footer-link
+    opacity: 0.6
+    transition: opacity 0.3s
+    &:hover
+      opacity: 0.8
+  &__footer-image
+    height: 40px
+
+  &__body
+    +content-width
+    padding: 0px
+    margin: 0px
+
+  &__aside
+    width: 60px
+
+.content-action
+  @extend .pb-5
+  &__btn
+    @extend .btn
+    @extend .btn-primary

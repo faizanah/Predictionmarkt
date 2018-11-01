@@ -1,0 +1,10 @@
+payment: &default
+  unused_min: 20
+  unused_batch: 50
+production: *default
+development: *default
+test:
+  <<: *default
+  unused_min: 1
+  unused_batch: 3
+

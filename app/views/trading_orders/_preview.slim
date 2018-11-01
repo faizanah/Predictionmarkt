@@ -1,0 +1,27 @@
+.form-block class="market-operation-preview--#{params[:operation]}"
+  h2 Order preview
+  - unless @form.order.ioc?
+    .maximum-volume
+      = "Expected total volume: #{format_money(@form.order.requested_amount, currency: @form.currency)}".html_safe
+  .immediate.mb-2
+    - if @form.preview_quote
+      .immediate__volume
+        |
+          Immediately filled volume:
+          #{format_money(@form.order.filled_amount, currency: @form.currency)}
+      .immediate__odds
+        |
+          Average odds:
+          #{quote_summary(@form.preview_quote[:quantity], @form.preview_quote[:avg_odds])}
+    - else
+      | Can't be immediatelly filled, no matching orders.
+
+  .time-in-force
+    - case @form.order.time_in_force.to_s
+    - when 'gtc'
+      | This order will be placed on the order book and remain valid until you cancel it.
+    - when 'ioc'
+      | This order will be placed and if it is not immediately filled, it will automatically be cancelled and removed from the order book.
+    - when 'gtt'
+      | This order will be automatically removed from the order book on the specified date.
+

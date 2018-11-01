@@ -1,0 +1,35 @@
+market_categories:
+  every: 30m
+  class: Markets::MarketCategoriesJob
+  description: Regenerates market categories
+  queue: Maintenance
+
+trades_stats:
+  every: 30m
+  class: Markets::ContractTradeStatsJob
+  description: Generates trade statistics
+  queue: Maintenance
+
+ingest_markets:
+  every: 24h
+  class: Markets::IngestJob
+  description: Ingests markets from the external data feeds
+  queue: Maintenance
+
+exchange_rates:
+  every: 24h
+  class: Maintenance::ExchangeRatesJob
+  description: Updates external currency exchange rates
+  queue: Maintenance
+
+sitemap:
+  every: 1h
+  class: Maintenance::SitemapJob
+  description: Updates sitemap
+  queue: Maintenance
+
+wallets_balances:
+  every: 30m
+  class: Maintenance::WalletsBalancesJob
+  description: Updates balances
+  queue: Maintenance

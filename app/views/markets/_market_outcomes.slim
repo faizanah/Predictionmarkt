@@ -1,0 +1,16 @@
+= pmkt_table
+  tbody
+    - @market.market_outcomes.sort_by(&:odds_avg).reverse.each do |outcome|
+      tr
+        td.w-100
+          = market_outcome_bar(outcome, class: 'market-outcome-bar--md')
+        td.col-md-2.col-sm-6= trade_outcome_button(outcome)
+    tr
+      td.w-100
+        span data={toggle: 'tooltip'} title='One share of each outcome'
+          | Outcome Bundle
+      td.col-md-2.col-sm-6= trade_set_button(@market)
+
+.market-rules-shortdesc
+  p = market_rules(@market)
+  | When the market closes, shares for the correct prediction will be redeemed at 100% of the price, all the other shares will have no value.

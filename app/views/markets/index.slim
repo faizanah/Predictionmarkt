@@ -1,0 +1,52 @@
+= render partial: 'markets/markets_navigation'
+- if @markets.empty?
+  .pmkt-table-missing-aligned
+    p No markets.
+- @markets.each do |market|
+    .market-card
+      .market-card__image.clickable style="background: url('#{market_image_path(market)}')" data-url=seo_market_path(market)
+      .market-card__content-wrapper
+        section.market-card__header
+          = link_to market.title, seo_market_path(market)
+        section.market-card__content
+          section.market-card__outcomes
+            - if market.winner_outcome
+
+              h3.market-card__outcomes-winner
+                i.material-icons &#xE5CA;
+                = market.winner_outcome.format_short_title
+              = "Market is #{market.state}."
+
+            - else
+
+              - market.market_outcomes.sort_by(&:odds_avg).reverse[0..1].each do |outcome|
+                = market_outcome_bar(outcome)
+
+          section.market-card-info
+            .market-card-info__element
+              - if market.close_date
+                - if market.close_date < Time.current
+                  - if market.tradeable?
+                    | closes soon
+                  - else
+                    = "closed #{time_ago_in_words(market.close_date)} ago"
+                - else
+                  = "closes in #{time_ago_in_words(market.close_date)}"
+              - else
+                | n/a
+              i.material-icons &#xE192;
+            - if market.tradeable?
+              - market.volumes(30.days.ago).each do |currency, amount|
+                .market-card-info__element
+                  = format_money(amount, currency: currency, secure: true, append: ' in 30d')
+                  i.material-icons &#xE922;
+
+        section.market-card__actions
+          - if market.tradeable?
+            = link_to 'Trade Predictions', seo_market_path(market), class: 'market-action-btn'
+          - admin_only do
+            = link_to 'Edit', edit_admin_market_path(market), class: 'market-action-btn'
+            = market_publishing_operations(market)
+            = market_settling_operations(market)
+            span.market-card__actions-btn
+              = market.state

@@ -1,0 +1,8 @@
+local:
+  service: Disk
+  root: <%= Rails.env.production? ? '/var/storage/predictionmarkt' : Rails.root.join("storage") %>
+  host: <%= Rails.application.routes.default_url_options[:host] %>
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+  host: <%= Rails.application.routes.default_url_options[:host] %>

@@ -1,0 +1,32 @@
+= ot_container('My open orders') do
+  - if @trading_orders.empty?
+    .pmkt-table-missing
+      p You do not have any open positions.
+  - @trading_orders.each do |market, trading_orders|
+    .orders-card
+      .orders-card__header
+        a data-toggle="collapse" data-parent="#market-orders-#{market.id}" href="#market-orders-#{market.id}" aria-expanded="true" class="collapse-indicator-after"
+          = market.title
+      .orders-card__content.collapse.show id="market-orders-#{market.id}"
+        = pmkt_table
+          thead.pmkt-md-up-block
+            tr
+              th.col-2 Time
+              th.w-100
+              th.col-1 Price
+              th.col-2 Volume
+              th.col-2 Progress
+              th.col-2
+          - trading_orders.each do |order|
+            tr
+              td.col-2.pmkt-md-up-flex= format_secure_time(order.created_at)
+              td.w-100
+                = trading_operation_badge(order.operation, classes: 'mr-2')
+                = link_to order.market_outcome.format_short_title, my_trading_order_path(order)
+
+              td.col-1.pmkt-md-up-flex= format_odds(order.odds)
+              td.col-2.pmkt-md-up-flex= format_money(order.requested_amount, currency: order.currency, usd_rounding: 0.001)
+
+              td.col-2.pmkt-md-up-flex= trading_order_progress(order)
+              td.pmkt-table__action-cell
+                = cancel_trading_order_button(order)

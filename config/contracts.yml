@@ -1,0 +1,16 @@
+production: &default
+  defaults:
+    eth:
+      default_tick: 1_000_000_000_000 # szabo / micro ETH
+      default_settle_price: 1_000_000_000_000_000 #  finney / milli ETH
+    btc:
+      default_tick: 100 # ubtc
+      default_settle_price: 10_000 # 0.1 mbtc
+    pmt:
+      default_tick: 1
+      default_settle_price: 100
+
+development: *default
+test:
+  <<: *default
+

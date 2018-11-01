@@ -1,0 +1,49 @@
+.order-card
+  section.order-card__header
+    = link_to @market.title, market_path(@market)
+  section.order-card__content-header
+    h2
+      = "#{@trading_order.order_type.titleize}: #{trading_order_human_state(@trading_order).titleize}"
+  section.order-card__content
+    = pmkt_table
+      tr
+        td.col-6 Operation
+        td.col-6
+          = trading_operation_badge(@trading_order.operation, classes: 'mr-2')
+          = link_to @market_outcome.format_short_title, my_share_path(@trading_order.contract)
+      tr
+        td.col-6 Progress
+        td.col-6= trading_order_progress(@trading_order)
+
+      - case @trading_order.order_type
+      - when 'market_order'
+      - when 'limit_order'
+        tr
+          td.col-6
+            - if @trading_order.bid?
+              | Maximum price
+            - else
+              | Minimum price
+          td.col-3
+            = format_money(@trading_order.limit_price, currency: @trading_order.currency)
+          td.col-3
+            = format_odds(@trading_order.limit_odds)
+
+      - unless @trading_order.trades.empty?
+        tr
+          td.col-6 Average price
+          td.col-3= format_money(@trading_order.avg_price, currency: @trading_order.currency)
+          td.col-3= format_odds(@trading_order.odds)
+
+      tr
+        td.col-6 Filled volume
+        td.col-6= format_money(@trading_order.filled_amount, currency: @trading_order.currency, usd_rounding: 0.1)
+      tr
+        td.col-6 Filled shares
+        td.col-6= @trading_order.filled_quantity
+      tr
+        td.col-6 Order created at
+        td.col-6= format_secure_time(@trading_order.created_at)
+  - if @trading_order.active?
+    section.order-card__footer
+      = cancel_trading_order_button(@trading_order, class: 'btn-action')

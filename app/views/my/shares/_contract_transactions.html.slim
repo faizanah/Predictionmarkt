@@ -1,0 +1,23 @@
+= ot_container("Contract transactions history") do
+  - if @contract_transactions.empty?
+    .pmkt-table-missing
+      p You have not purchased any contracts yet.
+  - else
+    = pmkt_table
+      thead
+        tr
+          th.col-3 Time
+          th.col-3 Reason
+          th.col-2 Change
+          th.col-2 Balance
+          th.col-2 Current Volume
+      tbody
+        - @contract_transactions.each do |trx|
+          - cause = trx.cause
+          tr
+            td.col-3= format_secure_time(trx.created_at)
+            td.col-3= link_to_cause(trx)
+            td.col-2= trx.total_change
+            td.col-2= trx.total
+            td.col-2= shares_value(trx)
+      = paginate @contract_transactions

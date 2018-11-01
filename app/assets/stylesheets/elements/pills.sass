@@ -1,0 +1,46 @@
+.v-pills
+  @extend .nav-pills
+  .nav-item
+    min-width: 100px
+    @extend .mb-2
+    @extend .text-center
+    .nav-link
+      @extend .p-2
+      transition: all .3s
+      @extend .text-center
+      border-radius: 4px
+      i
+        display: block
+        padding: 5px
+
+  .nav-link.active
+    +mdc-elevation(6, $mdc-theme-primary-dark)
+    transition: mdc-elevation-transition-value()
+    will-change: $mdc-elevation-property
+
+  .nav-link:not(.active)
+    +mdc-elevation(0, $mdc-theme-primary-dark)
+    transition: mdc-elevation-transition-value()
+    will-change: $mdc-elevation-property
+
+    &:hover
+      +mdc-elevation(1, $mdc-theme-primary-dark)
+      transition: mdc-elevation-transition-value()
+      will-change: $mdc-elevation-property
+
+
+// not used
+.h-pills
+  @extend .nav-pills
+  @extend .d-inline-flex
+  +mdc-elevation(6, $mdc-theme-primary-dark)
+  .nav-item
+    min-width: 100px
+    @extend .text-center
+    .nav-link
+      transition: all .3s
+      @extend .text-center
+      i
+        display: block
+        padding: 5px
+

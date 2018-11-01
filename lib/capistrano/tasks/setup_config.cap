@@ -1,0 +1,14 @@
+namespace :deploy do
+  task :setup_config do
+    on roles(:app, :web) do |server|
+      # make the config dir
+      execute :mkdir, "-p #{release_path}/config"
+      full_app_name = fetch(:full_app_name)
+
+      config_files = fetch(:config_files)
+      config_files.each do |file|
+        smart_template(server, file)
+      end
+    end
+  end
+end

@@ -1,0 +1,76 @@
+@import 'layout'
+@import 'text-mixins'
+
+.page-content
+  +readable-text
+  max-width: 750px
+  margin-left: auto
+  margin-right: auto
+  @extend .py-2
+  @extend .px-4
+  @extend .card
+  h1
+    @extend .my-5
+
+  h2
+    @extend .my-3
+
+  h3
+    @extend .my-3
+
+$block-quote-color: $mdc-theme-primary-light
+
+.blog-post
+  @extend .page-content
+  &--footer
+    @extend .my-3
+  p
+    @extend .mb-4
+  blockquote
+    font-weight: 300
+    line-height: 1.6
+    font-size: 1.4rem
+    width: 90%
+    margin: 50px auto
+    font-style: italic
+    color: #555555
+    padding: 1em 30px 1em 75px
+    border-left: 4px solid $block-quote-color
+    position: relative
+    background: #EDEDED
+
+    &::before
+      font-family: Arial
+      content: "\201C"
+      color: $block-quote-color
+      font-size: 4em
+      position: absolute
+      left: 10px
+      top: -10px
+
+    p
+      @extend .my-0
+
+.blog-posts-list
+  &--item
+    @extend .mb-3
+
+.blog-link
+  text-decoration: underline
+
+.embedded-page-content
+  @extend .py-3
+  +readable-text
+
+.pmkt-text
+  font-family: Montserrat
+
+@include media-breakpoint-down(sm)
+  .blog-post
+    blockquote
+      width: 100%
+      margin: 0px auto
+      padding: 1rem
+      &::before
+        content: ""
+

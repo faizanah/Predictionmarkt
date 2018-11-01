@@ -1,0 +1,10 @@
+.blog-post
+  h1
+    = link_to post_config[:title], blog_post_path_from_config(post_config)
+  = render "blog/posts/#{post_config[:id]}"
+
+  .blog-post--footer
+    = render partial: 'subscribe_form', locals: { post_config: @post_config }
+    = social_links url: blog_post_url_from_config(post_config)
+
+  .fb-comments data-href="#{blog_post_comment_url_from_config(post_config)}" data-numposts="5" data-width="100%" data-order-by="reverse_time"

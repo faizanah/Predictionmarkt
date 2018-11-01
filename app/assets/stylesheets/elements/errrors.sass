@@ -1,0 +1,17 @@
+.http-error
+  display: flex
+  flex: 0 1 auto // sticky footer
+  flex-direction: column
+  overflow: hidden
+  position: fixed
+  left: 0
+  top: 0
+  width: 100vw
+  height: 100vh
+  justify-content: center
+  align-items: center
+
+  &__title
+    @extend .mdc-typography--display2
+  &__description
+    @extend .mdc-typography--headline

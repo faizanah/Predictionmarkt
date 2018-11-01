@@ -1,0 +1,2 @@
+class PredictionmarktCurrency < ApplicationCurrency
+end

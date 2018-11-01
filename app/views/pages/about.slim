@@ -1,0 +1,30 @@
+.page-content
+
+  = page_headline('Welcome to PredictionMarkt', no_wrapper: true)
+
+  markdown:
+
+    #{image_tag('pages/cover.png', width: '100%')}
+
+    ## What is PredictionMarkt?
+
+      PredictionMarkt is a centralized, Ethereum-based platform for betting on the outcome of events in areas such as Business, Technology, Finance, Sports and Politics. Take part in the challenge of predicting everyday events in real time &mdash; and even profit from the outcome.
+
+    ## How is PredictionMarkt different from other platforms?
+
+      PredictionMarkt has three distinctly different characteristics:
+
+      * We provide centrally-managed prediction markets. This simplifies the platform and increases safety of our users by removing many risks such as fraud and outcome disputes.
+
+      * We don’t charge fees on your winnings or any internal transactions. The only time our users are charged is when they withdraw funds from their account.
+
+      * We keep the process simple by providing trading in the Ethereum currency. We don't expose our users to additional risks by creating our own crypto tokens.
+
+   ## What's next?
+
+     Going forward, we’ll be adding support for more cryptocurrencies. We’ll also be working on the features targeted at increasing market liquidity and precision of the prediction results.
+     We'll be creating more markets in more categories, let us know if there is a specific market category you are missing on the platform.
+
+     We are also interested in exploring partnership opportunities. Please contact us at #{mail_to 'concierge@predictionmarkt.com'} if you are interested.
+
+  = render partial: 'blog/subscribe_form', locals: { post_config: @post_config }

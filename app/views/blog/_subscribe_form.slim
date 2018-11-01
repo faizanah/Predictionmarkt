@@ -1,0 +1,13 @@
+.subscribe-form
+  h2 Stay in the loop
+
+  - if @form
+    p
+      | Thanks for subscribing! We'll keep you updated.
+  - else
+    p
+      | Join our mailing list and stay up to date with the recent developments and news about prediction markets.
+
+    = inline_simple_form_for(SubscribeForm.new, url: blog_subscribe_path, remote: true) do |f|
+      = f.input :email, label: 'Your email address'
+      = f.button :submit, 'Subscribe'

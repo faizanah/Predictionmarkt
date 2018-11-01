@@ -1,0 +1,3 @@
+.http-error
+  h1.http-error__title= @error_code.gsub(/[^\d]/, '')
+  p.http-error__description= @page_description

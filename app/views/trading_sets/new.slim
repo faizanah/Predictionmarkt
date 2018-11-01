@@ -1,0 +1,20 @@
+.trade-card
+  section.trade-card__header
+    = link_to @market.title, seo_market_path(@market)
+  #market_form= render partial: "form"
+
+= ot_tabs do |c|
+  - c.tab 'Info'
+    = render 'markets/info'
+  - if current_user
+    - c.tab 'Orders'
+      = render partial: 'markets/orders',
+               locals: { orders: @trading_orders,
+                         empty_message: "You don't have any open orders for this market." }
+    - c.tab 'Shares'
+      = render partial: 'markets/shares'
+
+  - c.tab 'Rules'
+    = render 'markets/rules'
+
+= render partial: 'markets/shared/market_comments'

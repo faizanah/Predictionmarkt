@@ -1,0 +1,7 @@
+= content_for :aside do
+  .market-comments-card
+    .card-block
+      // TODO: add permanent market url
+      // TODO: add loading progress bar
+      - url = Rails.env.development? ? 'https://google.com' : market_url(@market)
+      .fb-comments data-href="#{url}" data-numposts="10" data-width="100%" data-order-by="reverse_time"

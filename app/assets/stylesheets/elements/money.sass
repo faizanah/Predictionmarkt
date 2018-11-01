@@ -1,0 +1,23 @@
+.formatted-currency
+  white-space: nowrap
+// Deprecated
+.format-money-converted
+  white-space: nowrap
+
+p
+  // Deprecated
+  .format-money-converted
+    @extend .mdc-theme--text-secondary-on-light
+    &:before
+      content: ' (~'
+    &:after
+      content: ')'
+
+  .formatted-currency
+    font-weight: bold
+
+.tooltip
+  .format-money-converted
+    &:before
+      content: '~'
+    display: block

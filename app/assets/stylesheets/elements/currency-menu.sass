@@ -1,0 +1,18 @@
+@mixin currency-menu-color($color)
+  .currency-menu__toggle
+    @include mdc-theme-prop(color, $color);
+
+.currency-menu
+  display: flex
+  text-transform: uppercase
+
+  &--darkbg
+    +currency-menu-color($white)
+
+  &__toggle
+    @extend .mdc-typography--subheading1
+    display: flex
+    &:hover
+      text-decoration: none
+
+  &__list

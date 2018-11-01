@@ -1,0 +1,35 @@
+@mixin sb-icon
+  @extend .fa-fw
+  @extend .fa-lg
+  color: $mdc-theme-secondary
+
+.sb
+  @extend .mdc-theme--text-secondary-on-background
+  &__link:not(last-child)
+    @extend .mr-3
+
+  &__twitter
+    +sb-icon
+    &:hover
+      color: #55acee
+
+  &__facebook
+    +sb-icon
+    &:hover
+      color: #3b5998
+
+  &__google
+    +sb-icon
+    &:hover
+      color: #dc4e41
+
+.sb-auth
+  @extend .mt-3
+  @extend .fa-2x
+  &__icon
+    @extend .fa-fw
+  &__link
+    color: $white
+    @extend .mx-1
+    &:hover
+      color: $mdc-theme-secondary

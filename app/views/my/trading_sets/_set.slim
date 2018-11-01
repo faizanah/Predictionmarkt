@@ -1,0 +1,24 @@
+.set-card
+  section.set-card__header
+    = link_to @market.title, market_path(@market)
+  section.set-card__content-header
+    h2 Trading Set Order: Closed
+  section.set-card__content
+    = pmkt_table
+      tr
+        td.col-6 Operation
+        td.col-6
+          = trading_operation_badge(@market_shares_trx.reason, classes: 'mr-2')
+          | Every outcome
+
+      tr
+        td.col-6 Volume
+        td.col-6= format_money(@market_shares_trx.market_capital_change.abs, currency: @market_shares_trx.currency)
+
+      tr
+        td.col-6 Number of shares
+        td.col-6= "#{@market_shares_trx.total_change.abs} &times; #{@market.market_outcomes.size} outcomes".html_safe
+
+      tr
+        td.col-6 Order created at
+        td.col-6= format_secure_time(@market_shares_trx.created_at)

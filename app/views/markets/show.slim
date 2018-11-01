@@ -1,0 +1,29 @@
+.market-headline
+  .market-headline__cover style="background: url('#{market_image_path(@market)}')"
+  .market-headline__title
+    = page_headline(@market.title, no_wrapper: true)
+
+= ot_tabs(social: true) do |c|
+  - c.tab 'Outcomes'
+    = render partial: 'market_outcomes'
+  - c.tab 'Info'
+    = render 'markets/info'
+  - c.tab 'Rules'
+    = render 'markets/rules'
+
+- if current_user
+  = ot_container('My shares')
+    = render partial: 'shares'
+
+  = ot_tabs do |c|
+    - c.tab 'Open orders'
+      = render partial: 'orders',
+               locals: { orders: @trading_orders,
+                         empty_message: "You don't have any open orders in this market." }
+
+    - c.tab 'History'
+      = render partial: 'orders',
+               locals: { orders: @historical_orders,
+                         empty_message: "The order history for this market is empty." }
+
+= render partial: 'markets/shared/market_comments'

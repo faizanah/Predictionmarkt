@@ -1,0 +1,43 @@
+footer.layout-footer
+  .layout-footer__links
+    = link_to 'Blog', blog_path, class: 'layout-footer__link'
+    = link_to 'Service Fees', fees_path, class: 'layout-footer__link'
+    = link_to 'Referral Program', referral_path, class: 'layout-footer__link'
+    = link_to 'How it Works', how_path, class: 'layout-footer__link'
+    = link_to 'Terms of Service', terms_path, class: 'layout-footer__link'
+    = link_to 'Security & Privacy', security_path, class: 'layout-footer__link'
+    = link_to 'About', about_path, class: 'layout-footer__link'
+    // = link_to 'Developer Platform', developers_path, class: 'layout-footer__link'
+
+  .layout-footer__contacts
+    = link_to icon('fab', 'telegram-plane', class: 'fa-lg'),
+              'https://t.me/predictionmarkt',
+              title: "PredictionMarkt on Telegram",
+              class: 'layout-footer__link'
+    = link_to icon('fab', 'facebook ', class: 'fa-lg'),
+              'https://www.facebook.com/predictionmarkt/',
+              title: "PredictionMarkt on Facebook",
+              class: 'layout-footer__link'
+    = link_to icon('fab', 'twitter ', class: 'fa-lg'),
+              'https://twitter.com/predictionmarkt',
+              title: 'PredictionMarkt on Twitter',
+              class: 'layout-footer__link'
+    = link_to icon('fab', 'discord ', class: 'fa-lg'),
+             'https://discord.gg/B2A8M6D',
+              title: 'PredictionMarkt on Discord',
+              class: 'layout-footer__link'
+    = mail_to 'concierge@predictionmarkt.com',
+               icon('fas', 'envelope ', class: 'fa-lg'),
+              class: 'layout-footer__link'
+
+  .layout-footer__logo
+    a.layout-footer__link[href="/"]
+      = image_tag('logos/square-primary-white-bg.svg', height: '40', alt: 'PredictionMarkt')
+
+  #fb-root data-app-id=Rails.application.config_for('creds-test')['facebook_app_id']
+  // https://www.reddit.com/r/javascript/comments/7hz4bl/chrome_domcontentloaded_doesnt_wait_for_cssom_in/
+  // https://bugs.chromium.org/p/chromium/issues/detail?id=792420
+  // https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp
+  // inline script that will block DOM parsing, and therefore DOMContentLoaded, until the previous stylesheets are loaded
+  javascript:
+    // dummy

@@ -1,0 +1,35 @@
+// TODO: nowrap for balances
+= ot_container('My shares') do
+  - if @shares.empty?
+    .pmkt-table-missing
+      p You don't have any shares yet.
+  - else
+    - @shares.each do |market, transactions|
+      .shares-card
+        .shares-card__header
+          a data-toggle="collapse" data-parent="#market-shares-#{market.id}" href="#market-shares-#{market.id}" aria-expanded="true" class="collapse-indicator-after"
+            = market.title
+        .shares-card__content.collapse.show id="market-shares-#{market.id}"
+          = pmkt_table
+            thead.pmkt-md-up-block
+              tr
+                th.w-100
+                th.col-2 Volume
+                th.col-1 Shares
+                th.col-1 Buy price
+                th.col-1 Latest
+                th.col-2
+            tbody
+              - transactions.each do |trx|
+                tr
+                  td.w-100
+                    = link_to trx.market_outcome.format_short_title, my_share_path(trx.contract)
+                  td.col-2.pmkt-md-up-flex= shares_value(trx)
+                  td.col-1.pmkt-md-up-flex= trx.total
+                  - buy_odds = current_user.avg_buy_odds(trx.contract)
+                  - current_odds = trx.contract.quote.last_trade&.odds
+                  td.col-1.pmkt-md-up-flex= format_odds(buy_odds)
+                  td.col-1.pmkt-md-up-flex= format_odds_compare(current_odds, buy_odds)
+                  td.pmkt-table__action-cell= trade_outcome_button(trx.market_outcome, currency: trx.contract.currency)
+
+

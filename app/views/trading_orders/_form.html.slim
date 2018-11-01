@@ -1,0 +1,47 @@
+section.trade-card__content-header
+  = page_headline(@market_outcome.format_short_title, no_wrapper: true)
+  = trading_currency_menu('trading_order')
+
+section.trade-card__content
+  = simple_form_for(@form, url: market_outcome_trading_orders_path(@market_outcome, @form.uri_params),
+                           data: { preview: preview_market_outcome_trading_orders_path(@market_outcome, @form.uri_params) } ) do |f|
+    .form-block
+      .market-operations-wrapper
+        .market-operations
+          = market_operation_link('trading_order', 'buy')
+          = market_operation_link('trading_order', 'sell')
+        .market-spread
+          - if @contract_quote.visible_spread
+            =format_odds(@contract_quote.visible_spread)
+          - else
+            | &nbsp;
+
+    .form-block
+      .order-types-wrapper
+        .order-types.mdc-tab-bar
+          = order_type_link('market')
+          = order_type_link('limit')
+          span.mdc-tab-bar__indicator
+
+    .form-block
+      - @form.uri_params.each do |param, value|
+        = f.input param, as: :hidden
+        - if Rails.env.test?
+          span id="test_form_#{param}_#{value}"
+
+    - if !current_user
+      = render partial: 'trading_orders/forms/please_sign_in'
+    - elsif @form.bid? && @form.money_balance.zero?
+      = render partial: 'trading_orders/forms/no_funds'
+    - elsif @form.ask? && @form.shares_balance.zero?
+      = render partial: 'trading_orders/forms/no_shares'
+    - else
+      = render partial: "trading_orders/forms/#{params[:type]}", locals: { f: f }
+
+    #market_form_preview
+
+    .form-footer
+      = f.button :submit, params[:operation],
+        disabled: @form.disabled?,
+        class: "btn-#{params[:operation]}",
+        data: { disable_with: 'Processing...'}

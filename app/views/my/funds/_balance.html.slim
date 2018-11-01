@@ -1,0 +1,37 @@
+= ot_container('Balance') do
+  = pmkt_table
+    tbody
+      - ApplicationCurrency.select(&:enabled?).each do |ac|
+        - currency = ac.code
+        - trx = current_user.last_transaction(currency)
+        tr
+          td.col-3.pmkt-md-up-flex= ac.caption
+          // TODO: check if missing trx works, truncate the amount properly
+          td.w-100= format_money(trx&.total, currency: currency, max_length: 36)
+          td.pmkt-table__action-cell
+            = withdraw_button(currency)
+
+        - if ac.depositable? && wallet = deposit_wallet(currency)
+          tr
+            td.col-3.pmkt-md-up-flex
+              i.material-icons &#xE5DA;
+              | &nbsp; Deposit address
+            td.w-100
+              .pmkt-md-up-flex
+                = format_crypto_address(wallet)
+            td.pmkt-table__action-cell
+              = deposit_button(currency)
+
+      tr
+        td.w-100
+          span.text-muted.pmkt-md-up-flex
+            strong
+              = format_total_balance(current_user)
+            | &nbsp;
+            | &mdash;
+            | &nbsp;
+            | Estimated total value, according to the daily exchange rates.
+        td.pmkt-table__action-cell
+          = currency_statement_button
+  p.pmkt-text.my-3
+    | PredictionMarkt only accepts Ethereum as a currency you can deposit to your account. You can use our local currency, #{ApplicationCurrency.get('pmt').caption}, to trade in the prediction markets before you start using Ethereum.

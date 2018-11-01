@@ -1,0 +1,10 @@
+Host: predictionmarkt.com
+Sitemap: https://predictionmarkt.com/sitemap.xml
+
+User-agent: *
+Disallow: /admin
+Disallow: /api
+Disallow: /my
+Disallow: /private
+Disallow: /rails
+Disallow: /users

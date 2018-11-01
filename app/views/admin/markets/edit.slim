@@ -1,0 +1,6 @@
+= render partial: 'markets/market_form'
+
+= content_for :aside do
+  = render partial: 'market_outcomes/list'
+  - if @market_outcome
+    = render partial: 'market_outcomes/form'

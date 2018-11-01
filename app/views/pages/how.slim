@@ -1,0 +1,56 @@
+.page-content
+  - binary_market = Market.active.binary.take
+  - binary_settle_price = binary_market.settle_price('eth')
+  - format_binary_settle_price = format_money(binary_settle_price, currency: 'eth')
+  - categorical_market = Market.active.categorical.take
+
+  = page_headline('How do Prediction Markets work?', no_wrapper: true)
+
+  markdown:
+
+    #{image_tag('pages/cover.png', width: '100%')}
+
+    ## Trading Basics
+
+      PredictionMarkt is a platform that allows you to make money on predictions about future events by trading shares in the potential outcomes.
+
+      In a single market, we ask a specific question about a future event with a few potential outcomes. Some markets feature questions that have simple "Yes" or "No" answers, while others offer multiple possible outcomes.
+
+      Shares of each outcome could be sold or purchased with Ethereum for a fraction of the price, between 0 and 100%, which reflects the probability of the potential outcome. Once you own the shares, you can trade them with the other users of PredictioMarkt, making profit without waiting for the outcome of the event to happen.
+
+      When the actual outcome is determined, its shares are converted to 100% of the price and the owners make profit.
+
+    ### Example
+
+      Let's take a look at an example of a binary market: "#{link_to binary_market.title, seo_market_path(binary_market)}". This market has two outcomes: "Yes" and "No". Each share of this market costs between 0 and 100% with Ethereum price between 0 and #{format_money(binary_settle_price, currency: 'eth')}.
+
+      Alice thinks this event has at least a 60% chance of taking place so she offers #{format_money(0.6 * binary_settle_price, currency: 'eth')} for a "Yes" share. PredictionMarkt matches her offer with that of Bob, who is willing to pay 40% or #{format_money(0.4 * binary_settle_price, currency: 'eth')} for a "No". Each trader now owns a share in the market for this event on opposite sides.
+
+      The prices of shares will change over time, and both traders are free to sell their shares at any time.
+
+      Once the event has taken place and the outcome is determined, the market closes, all the shares are liquidated and shares for correct predictions are automatically converted to Ethereum, at 100% of the price, or #{format_money(binary_settle_price, currency: 'eth')}. All the other shares will have no value.
+
+      In the example above, if the outcome is "Yes", Alice will redeem her share at #{format_money(binary_settle_price, currency: 'eth')} and will gain #{format_money(0.4 * binary_settle_price, currency: 'eth')} on her #{format_money(0.6 * binary_settle_price, currency: 'eth')} for a total profit of #{(1.0 / 0.6 * 100).round}%.
+
+    ## Short Sales
+
+      Short sales are not allowed on PredictionMarkt.
+      Instead, you can buy a fixed-price outcome bundle, consisting of one share of each outcome in this market for 100% of the price of one share.
+
+      The price of each bundle is determined by the liquidation value of one share of the winning outcome.
+      Because only one market outcome is possible, the total payoff from holding one outcome bundle until the market closes is 100% or #{format_binary_settle_price} in the example above.
+
+      If you hold all of those shares until after the market is closed and liquidated, you would get exactly #{format_binary_settle_price} back. If, on the other hand, you sell one (or more) of those shares, that action is very much like selling short on other futures exchanges. And the #{format_binary_settle_price} you paid for the bundle was like a margin deposit.
+
+      Outcome bundles can be purchased from or sold to PredictionMarkt at any time.
+
+      We use outcome bundles to place shares in circulation rather than short sales because:
+
+      * We can always define a fixed-price outcome bundle regardless of the outcome of the event on which the market is based, and
+      * They provide an iron clad way to guarantee that PredictionMarkt neither makes nor loses money as a result of traders defaulting on short sales or margin accounts.
+
+    ## Your Profit and Our Fees
+
+      Our goal is to make prediction markets as efficient and as liquid as possible. As such, PredictionMarkt does not charge fees when you buy or sell shares. We also don't charge fees on your winnings.
+
+      PredictionMarkt charges a #{format_odds(pmkt_config[:withdraw_comission])} fee upon withdrawal of funds from the platform, but #{link_to 'that’s it', fees_path}.

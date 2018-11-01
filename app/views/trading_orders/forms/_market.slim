@@ -1,0 +1,8 @@
+// TODO render no-funds errors
+.form-block
+  - if @form.bid?
+    h6 Total amount of money to spend
+    = f.input :money, as: :percentage, label: "Amount, in #{params[:currency].upcase}"
+  - else
+    h6 Total number of shares you want to sell
+    = f.input :quantity, as: :percentage, label: "Number of shares"

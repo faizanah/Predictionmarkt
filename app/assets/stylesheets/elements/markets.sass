@@ -1,0 +1,187 @@
+@import 'text-mixins'
+
+@mixin market-image-filter
+  // images are already converted
+  // background-blend-mode: luminosity
+  @extend .mdc-theme--primary-light-bg
+  background-repeat-y: no-repeat !important
+  background-size: cover !important
+  background-position: center !important
+
+
+.market-headline
+  @extend .card
+  display: flex
+  flex-direction: row
+
+  &__cover
+    flex: 0 0 auto
+    +market-image-filter
+    min-width: 200px
+    min-height: 200px
+
+  &__title
+    @extend .mdc-typography--display1
+    @extend .py-4
+    @extend .px-3
+    @extend .text-center
+    flex: 1 1 auto
+    display: flex
+    align-items: center
+    justify-content: center
+
+.market-wrapper
+  @extend .px-0 // workaround for right padding in the horizonal block ^
+  flex: 1
+
+.market-card
+  flex-direction: row
+  +pmkt-card-mini
+  @extend .pl-0 // needed to remove the blank space from the image
+  align-items: stretch
+  max-height: 250px
+
+  &__image
+    flex-shrink: 0
+    @extend .mdc-card__media
+    +market-image-filter
+    width: 220px
+    &:hover
+      transform: scale(1.01)
+
+  &__header
+    a
+      @extend .mdc-typography--title
+
+  &__actions
+    @extend .mdc-card__actions
+
+  &__content-wrapper
+    @extend .w-100
+
+  &__content
+    //@extend .mdc-card__supporting-text
+    @extend .d-flex
+    flex-direction: row
+    justify-content: space-between
+    justify-items: stretch
+    align-items: center
+
+  &__outcomes
+    flex-grow: 1
+    @extend .my-3
+
+  &__outcomes-winner
+    @extend .d-flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    //align-items: flex-start
+    @extend .mdc-typography--headline
+    @extend .mdc-theme--text-primary-on-background
+    i.material-icons
+      @extend .mr-2
+
+.market-card-info
+  @extend .d-flex
+  flex-direction: column
+  align-items: flex-end
+  &__element
+    @extend .mt-1
+    i
+      @extend .text-center
+      width: 25px
+      @extend .ml-2
+    @extend .d-inline-flex
+    align-items: center
+    @extend .mdc-theme--text-secondary-on-background
+
+.market-categories
+  @extend .card
+  @extend .p-3
+  min-width: 200px
+  ul
+    @extend .nav
+    @extend .flex-column
+    li
+      @extend .flex-column
+      @extend .nav-item
+      ul
+        @extend .ml-4
+        li
+          @extend .mdc-typography--body1
+      i
+        @extend .mr-2
+      @extend .d-inline-flex
+      @extend .mdc-theme--text-primary-on-background
+      @extend .mdc-typography--body2
+  .active
+    font-weight: bold
+
+a.market-action-btn
+  @extend .mdc-button
+  @extend .mdc-card__action
+  +mdc-button-ink-color($mdc-theme-primary-dark)
+  // @extend .mdc-button--compact
+
+.market-outcome-bar
+  @extend .my-1
+  @extend .d-flex
+  flex: 1 1 auto
+  .outcome__bar
+    display: inline-flex
+    flex: 1 1 auto
+    &--inner
+      @extend .my-1
+      @extend .mdc-theme--primary-light-bg
+      height: 15px
+      flex-grow: 0
+      flex-shrink: 0
+      @extend .mr-2
+    &--label
+      @extend .d-inline-flex
+      align-items: center
+      white-space: nowrap
+      @extend .mdc-theme--text-primary-on-background
+      i.material-icons
+        @extend .mr-1
+        font-size: 18px
+    &--value
+      @extend .d-inline-flex
+      align-items: center
+      @extend .ml-2
+      white-space: nowrap
+      @extend .mdc-theme--text-secondary-on-background
+      i.material-icons
+        font-size: 18px
+
+.market-rules-shortdesc
+  @extend .mt-2
+  +readable-text
+
+@include media-breakpoint-down(md)
+  .market-card
+    &__content
+      margin-bottom: 0 !important
+    &__outcomes
+      margin-bottom: 0 !important
+  .market-card-info
+    display: none !important
+
+@include media-breakpoint-down(sm)
+  .market-outcome-bar--md
+    .outcome__bar
+      &--inner
+        display: none !important
+
+  .market-headline
+    flex-direction: column
+    &__cover
+      width: 100%
+      height: 150px
+  .market-card
+    flex-direction: column
+    max-height: unset
+    &__image
+      width: 100%
+      height: 150px

@@ -1,0 +1,24 @@
+.form-block
+
+  - if @form.bid?
+    h6 Maxium price to pay, per share
+    = f.input :limit_price, as: :percentage,
+      js_dependency: 'max_price_quantity',
+      label: "Price per share, in #{params[:currency].upcase}"
+
+    h6 Total number of shares to buy
+
+    = f.input :quantity, as: :percentage, wrapper: :material_slider,
+      label: "Number of shares"
+
+  - else
+
+    h6 Minimum price to pay, per share
+    = f.input :limit_price, as: :percentage,
+      label: "Price per share, in #{params[:currency].upcase}"
+
+    h6 Total number of shares to sell
+
+    = f.input :quantity, as: :percentage, wrapper: :material_slider,
+      label: "Number of shares"
+

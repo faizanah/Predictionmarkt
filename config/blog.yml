@@ -1,0 +1,13 @@
+production: &default
+  posts:
+    1:
+      title: 'How to make money on risky ICOs'
+      date: '2018-03-23'
+    2:
+      title: 'How to trade on prediction markets'
+      date: '2018-03-22'
+
+development: *default
+test:
+  <<: *default
+

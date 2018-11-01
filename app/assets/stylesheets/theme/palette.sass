@@ -1,0 +1,67 @@
+// https://material.io/color/#!/?view.left=1&view.right=1&primary.color=5b6584&secondary.color=a15200&secondary.text.color=ffffff<Paste>
+
+$mdc-theme-primary: #5b6584
+$mdc-theme-secondary: #a15200
+$mdc-theme-background: #FFFFFF
+
+// Text styles
+// Primary: used for most text
+// Secondary: used for text which is lower in the visual hierarchy
+// Hint: used for text hints, such as those in text fields and labels
+// Disabled: used for text in disabled components and content
+// Icon: used for icons
+
+$mdc-theme-primary-light: #8993b4
+$mdc-theme-primary-dark: #303b57
+$mdc-theme-secondary-light: #d77f35
+$mdc-theme-secondary-dark: #6d2700
+
+@import "@material/theme/mdc-theme"
+
+// colormind colors
+
+$aqua-forest: #64a967
+$fire-bush: #e2992f
+$pomegranate: #f44336
+
+$hippie-blue: #6b9eba
+$pickled-bluewood: #303b57
+$old-gold: #d39a38
+
+// Trading colors
+
+$pmkt-theme-buy: $mdc-theme-primary-dark
+$pmkt-theme-sell: $mdc-theme-secondary-dark
+
+$pmkt-theme-sell-light: rgba($pmkt-theme-sell, .2)
+$pmkt-theme-buy-light: rgba($pmkt-theme-buy, .2)
+
+// Bootstrap configuration
+
+@import "bootstrap/scss/functions"
+
+$success: $aqua-forest
+$info: $pickled-bluewood
+$warning: $old-gold
+$danger: $pomegranate
+$light: $mdc-theme-secondary-light
+$dark: $mdc-theme-primary-dark
+
+$theme-colors: () !default
+
+$theme-colors: map-merge(( "primary": $mdc-theme-primary, "secondary": $mdc-theme-secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark), $theme-colors)
+
+//$body-color: $dark-shades
+//$body-bg: $mdc-theme-background
+$body-bg: #F3F1F2
+
+// Bootstrap brand color customization
+$brand-primary: $mdc-theme-primary
+$brand-success: $success
+$brand-danger: $danger
+$brand-warning: $warning
+$brand-info: $info
+
+$enable-shadows: true
+$enable-rounded: false
+$enable-transitions: true
